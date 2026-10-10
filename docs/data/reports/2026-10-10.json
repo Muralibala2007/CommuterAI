@@ -2,143 +2,6 @@
  "date": "2026-10-10",
  "routes": [
   {
-   "id": "home-office",
-   "name": "Home to office",
-   "origin": "Thane Railway Station, Thane, Maharashtra",
-   "destination": "Bandra Kurla Complex, Mumbai",
-   "depart_time": "08:30",
-   "options": [
-    {
-     "mode": "two_wheeler",
-     "label": "Bike",
-     "minutes": 47,
-     "no_traffic_minutes": 41,
-     "delay_minutes": 6,
-     "km": 20.8,
-     "steps": []
-    },
-    {
-     "mode": "drive",
-     "label": "Car",
-     "minutes": 56,
-     "no_traffic_minutes": 41,
-     "delay_minutes": 15,
-     "km": 20.8,
-     "steps": []
-    },
-    {
-     "mode": "transit",
-     "label": "Bus / Train (option 3)",
-     "minutes": 116,
-     "no_traffic_minutes": 116,
-     "delay_minutes": 0,
-     "km": 25.4,
-     "steps": [
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      },
-      {
-       "type": "walk",
-       "text": "Walk 3 min",
-       "depart": ""
-      },
-      {
-       "type": "bus",
-       "text": "Bus 60AC from Thane (W) to Income Tax Office (4 stops) toward Borivali",
-       "depart": "2026-10-10T09:20:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Amar Mahal (11 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-10-10T09:33:36Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
-       "depart": "2026-10-10T10:44:11Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      }
-     ]
-    },
-    {
-     "mode": "transit",
-     "label": "Bus / Train (option 2)",
-     "minutes": 118,
-     "no_traffic_minutes": 118,
-     "delay_minutes": 0,
-     "km": 26.2,
-     "steps": [
-      {
-       "type": "bus",
-       "text": "Bus 240 from Thane Railway Station to Teen Hath Naka (7 stops) toward Lokmanya Nagar",
-       "depart": "2026-10-10T09:16:16Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Amar Mahal (11 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-10-10T09:33:36Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
-       "depart": "2026-10-10T10:44:11Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      }
-     ]
-    },
-    {
-     "mode": "transit",
-     "label": "Bus / Train (option 1)",
-     "minutes": 121,
-     "no_traffic_minutes": 121,
-     "delay_minutes": 0,
-     "km": 28.3,
-     "steps": [
-      {
-       "type": "bus",
-       "text": "Bus A-700 from Thane Station (E) to Louis Wadi (6 stops) toward Magathane Depot",
-       "depart": "2026-10-10T09:11:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-491 from Louis Wadi to Amar Mahal (12 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-10-10T09:32:02Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
-       "depart": "2026-10-10T10:44:11Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      }
-     ]
-    }
-   ],
-   "fastest": "Bike",
-   "trains": [],
-   "train_pair": {
-    "from": "Thane",
-    "to": "Dadar"
-   },
-   "weather": {
-    "temp_c": 36.9,
-    "rain_mm": 0.0
-   }
-  },
-  {
    "id": "panvelkar-estate-greenford-badlapursies--3419",
    "name": "Home TO Clg",
    "origin": "Panvelkar estate Greenford, Badlapur",
@@ -296,7 +159,134 @@
     "temp_c": 34.5,
     "rain_mm": 0.0
    }
+  },
+  {
+   "id": "home-office",
+   "name": "Home to office",
+   "origin": "Thane Railway Station, Thane, Maharashtra",
+   "destination": "Bandra Kurla Complex, Mumbai",
+   "depart_time": "08:30",
+   "options": [
+    {
+     "mode": "two_wheeler",
+     "label": "Bike",
+     "minutes": 46,
+     "no_traffic_minutes": 41,
+     "delay_minutes": 5,
+     "km": 20.8,
+     "steps": []
+    },
+    {
+     "mode": "drive",
+     "label": "Car",
+     "minutes": 60,
+     "no_traffic_minutes": 41,
+     "delay_minutes": 18,
+     "km": 20.8,
+     "steps": []
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 1)",
+     "minutes": 80,
+     "no_traffic_minutes": 80,
+     "delay_minutes": 0,
+     "km": 21.4,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 4 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 126 from Gavdevi Mandir (Thane) to MMRDA Grounds (28 stops) toward Reserve Bank of India",
+       "depart": "2026-10-10T10:30:00Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 2)",
+     "minutes": 117,
+     "no_traffic_minutes": 117,
+     "delay_minutes": 0,
+     "km": 22.7,
+     "steps": [
+      {
+       "type": "bus",
+       "text": "Bus 23 from Thane Railway Station to Forest Office (6 stops) toward Lokmanya Nagar",
+       "depart": "2026-10-10T09:50:05Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-494 from Forest Office to Ishwar Nagar or Bhandup (W) (17 stops) toward Ghatkopar Bus Station",
+       "depart": "2026-10-10T10:05:43Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 303 from Ishwar Nagar or Bhandup (W) to Citi Bank (BKC) (30 stops) toward Bandra (E) Bus Station",
+       "depart": "2026-10-10T10:42:40Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 3)",
+     "minutes": 119,
+     "no_traffic_minutes": 119,
+     "delay_minutes": 0,
+     "km": 22.4,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 23 from A.K. Joshi Vidyalaya to Johnson Company (6 stops) toward Lokmanya Nagar",
+       "depart": "2026-10-10T09:52:14Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 88 from Johnson Company to Vandana Hotel (7 stops) toward TMT Mulund station",
+       "depart": "2026-10-10T10:03:50Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 303 from Dhanvantari Hospital to Citi Bank (BKC) (46 stops) toward Bandra (E) Bus Station",
+       "depart": "2026-10-10T10:16:45Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    }
+   ],
+   "fastest": "Bike",
+   "trains": [],
+   "train_pair": {
+    "from": "Thane",
+    "to": "Dadar"
+   },
+   "weather": {
+    "temp_c": 36.5,
+    "rain_mm": 0.2
+   }
   }
  ],
- "generated_at": "2026-10-10T14:56+05:30"
+ "generated_at": "2026-10-10T15:05+05:30"
 }
