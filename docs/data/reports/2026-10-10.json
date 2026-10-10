@@ -11,93 +11,28 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 52,
+     "minutes": 47,
      "no_traffic_minutes": 41,
-     "delay_minutes": 11,
+     "delay_minutes": 6,
      "km": 20.8,
      "steps": []
     },
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 58,
+     "minutes": 56,
      "no_traffic_minutes": 41,
-     "delay_minutes": 17,
+     "delay_minutes": 15,
      "km": 20.8,
      "steps": []
     },
     {
      "mode": "transit",
-     "label": "Bus / Train (option 1)",
-     "minutes": 107,
-     "no_traffic_minutes": 107,
-     "delay_minutes": 0,
-     "km": 21.7,
-     "steps": [
-      {
-       "type": "bus",
-       "text": "Bus 23 from Thane Railway Station to Teen Hath Naka (7 stops) toward Lokmanya Nagar",
-       "depart": "2026-10-10T09:10:05Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 496 LTD from Marathon Chowk (Teen Hath Naka) to Huma Cinema (Kanjurmarg-W) (19 stops) toward Agarkar Chowk (Andheri-E)",
-       "depart": "2026-10-10T09:22:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 303 from Huma Cinema (Kanjurmarg-W) to Citi Bank (BKC) (24 stops) toward Bandra (E) Bus Station",
-       "depart": "2026-10-10T10:01:16Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      }
-     ]
-    },
-    {
-     "mode": "transit",
      "label": "Bus / Train (option 3)",
-     "minutes": 109,
-     "no_traffic_minutes": 109,
+     "minutes": 116,
+     "no_traffic_minutes": 116,
      "delay_minutes": 0,
-     "km": 21.8,
-     "steps": [
-      {
-       "type": "walk",
-       "text": "Walk 4 min",
-       "depart": ""
-      },
-      {
-       "type": "bus",
-       "text": "Bus 65AC from Gavdevi Mandir (Thane) to Eternity Sankul (3 stops) toward Borivali",
-       "depart": "2026-10-10T09:10:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 496 LTD from Marathon Chowk (Teen Hath Naka) to Huma Cinema (Kanjurmarg-W) (19 stops) toward Agarkar Chowk (Andheri-E)",
-       "depart": "2026-10-10T09:22:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 303 from Huma Cinema (Kanjurmarg-W) to Citi Bank (BKC) (24 stops) toward Bandra (E) Bus Station",
-       "depart": "2026-10-10T10:01:16Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      }
-     ]
-    },
-    {
-     "mode": "transit",
-     "label": "Bus / Train (option 2)",
-     "minutes": 114,
-     "no_traffic_minutes": 114,
-     "delay_minutes": 0,
-     "km": 22.9,
+     "km": 25.4,
      "steps": [
       {
        "type": "walk",
@@ -111,18 +46,78 @@
       },
       {
        "type": "bus",
-       "text": "Bus 3 from Thane (W) to Forest Office (5 stops) toward Lokmanya Nagar",
-       "depart": "2026-10-10T09:05:00Z"
+       "text": "Bus 60AC from Thane (W) to Income Tax Office (4 stops) toward Borivali",
+       "depart": "2026-10-10T09:20:00Z"
       },
       {
        "type": "bus",
-       "text": "Bus A-494 from Forest Office to Ishwar Nagar or Bhandup (W) (17 stops) toward Ghatkopar Bus Station",
-       "depart": "2026-10-10T09:15:43Z"
+       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Amar Mahal (11 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-10T09:33:36Z"
       },
       {
        "type": "bus",
-       "text": "Bus 303 from Ishwar Nagar or Bhandup (W) to Citi Bank (BKC) (30 stops) toward Bandra (E) Bus Station",
-       "depart": "2026-10-10T09:52:40Z"
+       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
+       "depart": "2026-10-10T10:44:11Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 2)",
+     "minutes": 118,
+     "no_traffic_minutes": 118,
+     "delay_minutes": 0,
+     "km": 26.2,
+     "steps": [
+      {
+       "type": "bus",
+       "text": "Bus 240 from Thane Railway Station to Teen Hath Naka (7 stops) toward Lokmanya Nagar",
+       "depart": "2026-10-10T09:16:16Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Amar Mahal (11 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-10T09:33:36Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
+       "depart": "2026-10-10T10:44:11Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 1)",
+     "minutes": 121,
+     "no_traffic_minutes": 121,
+     "delay_minutes": 0,
+     "km": 28.3,
+     "steps": [
+      {
+       "type": "bus",
+       "text": "Bus A-700 from Thane Station (E) to Louis Wadi (6 stops) toward Magathane Depot",
+       "depart": "2026-10-10T09:11:00Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Louis Wadi to Amar Mahal (12 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-10T09:32:02Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
+       "depart": "2026-10-10T10:44:11Z"
       },
       {
        "type": "walk",
@@ -139,10 +134,10 @@
     "to": "Dadar"
    },
    "weather": {
-    "temp_c": 37.1,
+    "temp_c": 36.9,
     "rain_mm": 0.0
    }
   }
  ],
- "generated_at": "2026-10-10T14:26+05:30"
+ "generated_at": "2026-10-10T14:35+05:30"
 }
