@@ -11,9 +11,9 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 45,
+     "minutes": 44,
      "no_traffic_minutes": 41,
-     "delay_minutes": 4,
+     "delay_minutes": 2,
      "km": 20.8,
      "steps": []
     },
@@ -68,41 +68,26 @@
     },
     {
      "mode": "transit",
-     "label": "Bus / Train (option 1)",
-     "minutes": 92,
-     "no_traffic_minutes": 92,
+     "label": "Bus / Train (option 2)",
+     "minutes": 93,
+     "no_traffic_minutes": 93,
      "delay_minutes": 0,
-     "km": 22.0,
+     "km": 25.6,
      "steps": [
       {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      },
-      {
-       "type": "walk",
-       "text": "Walk 3 min",
-       "depart": ""
+       "type": "bus",
+       "text": "Bus 212AC from Thane Railway Station to Teen Hath Naka (6 stops) toward Kisan Nagar",
+       "depart": "2026-10-10T15:25:22Z"
       },
       {
        "type": "bus",
-       "text": "Bus 8 from Thane (W) to Income Tax Office (4 stops) toward Vartak Nagar",
-       "depart": "2026-10-10T15:08:00Z"
+       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Amar Mahal (11 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-10T15:40:07Z"
       },
       {
        "type": "bus",
-       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Kanjur Marg Village (Eeh) (4 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-10-10T15:18:44Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-492 from Kanjur Marg Village (Eeh) to Gandhi Nagar (4 stops) toward Majas Depot",
-       "depart": "2026-10-10T15:33:42Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 303 from Gandhi Nagar (Kanjurmarg) to Citi Bank (BKC) (23 stops) toward Bandra (E) Bus Station",
-       "depart": "2026-10-10T15:46:12Z"
+       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
+       "depart": "2026-10-10T16:29:53Z"
       },
       {
        "type": "walk",
@@ -113,21 +98,21 @@
     },
     {
      "mode": "transit",
-     "label": "Bus / Train (option 2)",
-     "minutes": 93,
-     "no_traffic_minutes": 93,
+     "label": "Bus / Train (option 1)",
+     "minutes": 98,
+     "no_traffic_minutes": 98,
      "delay_minutes": 0,
-     "km": 25.3,
+     "km": 28.3,
      "steps": [
       {
        "type": "bus",
-       "text": "Bus 212AC from Thane Railway Station to Income Tax Office (5 stops) toward Kisan Nagar",
-       "depart": "2026-10-10T15:25:22Z"
+       "text": "Bus A-700 from Thane Station (E) to Louis Wadi (6 stops) toward Magathane Depot",
+       "depart": "2026-10-10T15:19:00Z"
       },
       {
        "type": "bus",
-       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Amar Mahal (11 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-10-10T15:36:35Z"
+       "text": "Bus A-491 from Louis Wadi to Amar Mahal (12 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-10T15:38:53Z"
       },
       {
        "type": "bus",
@@ -149,7 +134,7 @@
     "to": "Dadar"
    },
    "weather": {
-    "temp_c": 31.3,
+    "temp_c": 31.2,
     "rain_mm": 0.0
    }
   },
@@ -163,18 +148,18 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 96,
+     "minutes": 94,
      "no_traffic_minutes": 93,
-     "delay_minutes": 3,
+     "delay_minutes": 2,
      "km": 46.8,
      "steps": []
     },
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 102,
+     "minutes": 101,
      "no_traffic_minutes": 94,
-     "delay_minutes": 9,
+     "delay_minutes": 8,
      "km": 46.3,
      "steps": []
     },
@@ -303,7 +288,7 @@
    "trains": [],
    "train_pair": null,
    "weather": {
-    "temp_c": 29.2,
+    "temp_c": 28.9,
     "rain_mm": 0.0
    }
   },
@@ -317,18 +302,18 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 140,
+     "minutes": 138,
      "no_traffic_minutes": 134,
-     "delay_minutes": 6,
+     "delay_minutes": 4,
      "km": 58.2,
      "steps": []
     },
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 156,
+     "minutes": 155,
      "no_traffic_minutes": 134,
-     "delay_minutes": 21,
+     "delay_minutes": 20,
      "km": 58.0,
      "steps": []
     },
@@ -582,10 +567,124 @@
    "trains": [],
    "train_pair": null,
    "weather": {
-    "temp_c": 31.3,
+    "temp_c": 31.2,
+    "rain_mm": 0.0
+   }
+  },
+  {
+   "id": "anand-nagar-ghodbunder-road-thaner-city--8598",
+   "name": "Home to Mall",
+   "origin": "Anand nagar, ghodbunder road, thane",
+   "destination": "R- city mall, ghatkopar",
+   "depart_time": "20:50",
+   "options": [
+    {
+     "mode": "two_wheeler",
+     "label": "Bike",
+     "minutes": 53,
+     "no_traffic_minutes": 48,
+     "delay_minutes": 5,
+     "km": 23.4,
+     "steps": []
+    },
+    {
+     "mode": "drive",
+     "label": "Car",
+     "minutes": 60,
+     "no_traffic_minutes": 47,
+     "delay_minutes": 13,
+     "km": 23.1,
+     "steps": []
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 3)",
+     "minutes": 94,
+     "no_traffic_minutes": 94,
+     "delay_minutes": 0,
+     "km": 27.1,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-700 from Anand Nagar (Ghodbunder Road) to Siddhivinayak Tower (14 stops) toward Thane Station (E)",
+       "depart": "2026-10-10T15:28:58Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-492 from Siddhivinayak Tower to Gandhi Nagar (17 stops) toward Majas Depot",
+       "depart": "2026-10-10T15:56:12Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 382 LTD from Gandhi Nagar (Kanjurmarg) to Meenatai Thackeray Maidan (Anacin Company) (8 stops) toward Anushakti Nagar Bus Station",
+       "depart": "2026-10-10T16:43:18Z"
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 2)",
+     "minutes": 96,
+     "no_traffic_minutes": 96,
+     "delay_minutes": 0,
+     "km": 23.2,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 4 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus C-61 from Muchhala College to Marathon Chowk (Teen Hath Naka) (12 stops) toward Mulund Depot",
+       "depart": "2026-10-10T15:33:15Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-494 from Marathon Chowk (Teen Hath Naka) to Meenatai Thackeray Maidan (Anacin Company) (29 stops) toward Ghatkopar Bus Station",
+       "depart": "2026-10-10T16:12:49Z"
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 1)",
+     "minutes": 97,
+     "no_traffic_minutes": 97,
+     "delay_minutes": 0,
+     "km": 24.3,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 53AC from Anand Nagar to Forest Office (24 stops) toward Thane (W)",
+       "depart": "2026-10-10T15:30:23Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-494 from Forest Office to Meenatai Thackeray Maidan (Anacin Company) (30 stops) toward Ghatkopar Bus Station",
+       "depart": "2026-10-10T16:12:05Z"
+      }
+     ]
+    }
+   ],
+   "fastest": "Bike",
+   "trains": [],
+   "train_pair": null,
+   "weather": {
+    "temp_c": 31.7,
     "rain_mm": 0.0
    }
   }
  ],
- "generated_at": "2026-10-10T20:28+05:30"
+ "generated_at": "2026-10-10T20:32+05:30"
 }
