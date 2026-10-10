@@ -8,7 +8,9 @@ IST = zoneinfo.ZoneInfo("Asia/Kolkata")
 KEY = os.environ["GOOGLE_MAPS_API_KEY"]
 TG_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 TG_CHAT = os.environ["TELEGRAM_CHAT_ID"]
-PAGES_URL = os.environ.get("PAGES_URL", "").rstrip("/")
+_owner, _, _repo = os.environ.get("GITHUB_REPOSITORY", "owner/repo").partition("/")
+# Repo variable PAGES_URL wins; otherwise derive the standard GitHub Pages address.
+PAGES_URL = (os.environ.get("PAGES_URL") or f"https://{_owner.lower()}.github.io/{_repo}").rstrip("/")
 FORCE = os.environ.get("FORCE") == "true"
 
 MODES = {  # key -> (Routes API travelMode, label)
@@ -139,8 +141,9 @@ def main():
         return
     report["generated_at"] = now.isoformat(timespec="minutes")
     report_f.write_text(json.dumps(report, indent=1))
+    (ROOT / "docs/data/latest.json").write_text(json.dumps(report, indent=1))  # fallback for report.html
     link = f"{PAGES_URL}/report.html?d={today}"
-    telegram("Good morning. Your commute today:\n\n" + "\n\n".join(lines) + f"\n\n<a href=\"{link}\">Open full route details</a>")
+    telegram("Good morning. Your commute today:\n\n" + "\n\n".join(lines) + f"\n\nFull route details:\n{link}")
     state_f.write_text(json.dumps({k: v for k, v in sorted(state.items())[-14:]}, indent=1))
     for old in sorted((ROOT / "docs/data/reports").glob("*.json"))[:-14]:
         old.unlink()  # keep two weeks of reports

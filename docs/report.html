@@ -7,8 +7,10 @@
 <script>
 const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const tm=s=>new Date(s).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});
-const d=new URLSearchParams(location.search).get("d")||new Date().toISOString().slice(0,10);
-fetch(`data/reports/${encodeURIComponent(d)}.json`).then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{
+const q=new URLSearchParams(location.search).get("d");
+const ist=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kolkata"}).format(new Date());
+const get=u=>fetch(u+"?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()});
+get(`data/reports/${encodeURIComponent(q||ist)}.json`).catch(()=>q?Promise.reject():get("data/latest.json")).then(j=>{
  $("meta").textContent=`${j.date}, updated ${tm(j.generated_at)}`;
  $("out").innerHTML=j.routes.map(r=>{const w=r.weather;
   return `<h2>${esc(r.name)}</h2><p class="sub">${esc(r.origin)} to ${esc(r.destination)}, leave ${esc(r.depart_time)}`+
