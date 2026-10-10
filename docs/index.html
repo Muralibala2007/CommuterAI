@@ -55,7 +55,7 @@
 <script>
 const $=id=>document.getElementById(id),LS=localStorage,enc=encodeURIComponent;
 const DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],MODES={transit:"Bus / Train",drive:"Car",two_wheeler:"Bike"};
-const MAP={transit:{f:"r",m:"transit",l:"Bus / Train"},drive:{f:"d",m:"driving",l:"Car"},two_wheeler:{f:"b",m:"bicycling",l:"Bike"}};
+const MAP={transit:{f:"r",m:"transit",l:"Bus / Train"},drive:{f:"d",m:"driving",l:"Car"},two_wheeler:{f:"d",m:"driving",l:"Bike"}};
 const IC={transit:"bus",drive:"car",two_wheeler:"bike"};
 const ic=n=>`<svg class="ico"><use href="#i-${n}"/></svg>`;
 const split=l=>{const m=/^(.*?)\s*\(option (\d+)\)$/i.exec(l);return m?{base:m[1],opt:m[2]}:{base:l,opt:null}};
@@ -90,7 +90,11 @@ function persist(){LS.routes=JSON.stringify(routes);if(!ready()){say("Not saved 
  chain=chain.then(async()=>{try{say("Saving to GitHub...");const a=api();
   const cur=await fetch(a.url+"?ref="+a.br+"&t="+Date.now(),{headers:a.H});const sha=cur.ok?(await cur.json()).sha:undefined;
   const put=await fetch(a.url,{method:"PUT",headers:a.H,body:JSON.stringify({message:"Update routes from dashboard",branch:a.br,sha,content:btoa(unescape(encodeURIComponent(JSON.stringify({routes},null,2))))})});
-  say(put.ok?"Saved to GitHub. The next scheduled run will use it.":"GitHub rejected the save ("+put.status+"). Check the repo, branch and token.")}catch(e){say("Could not reach GitHub. Try again.")}})}
+  if(put.ok)watchReport();say(put.ok?"Saved to GitHub. Building the report for your routes, this takes a few minutes.":"GitHub rejected the save ("+put.status+"). Check the repo, branch and token.")}catch(e){say("Could not reach GitHub. Try again.")}})}
+
+// after a save, poll until the new report appears
+function watchReport(){let n=0;const t=setInterval(async()=>{n++;try{const j=await(await fetch("data/latest.json?t="+Date.now(),{cache:"no-store"})).json();
+  if(routes.every(r=>(j.routes||[]).some(x=>x.id===r.id))){latest=j;draw();say("Report ready for all routes.");clearInterval(t)}}catch(e){}if(n>24)clearInterval(t)},20000)}
 
 // render
 function draw(){

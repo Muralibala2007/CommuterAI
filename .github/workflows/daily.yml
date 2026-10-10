@@ -1,6 +1,8 @@
 name: Daily commute alert
 
 on:
+  push:
+    paths: ["config/routes.json"]
   schedule:
     # Every 30 min, 05:30-12:00 IST (00:00-06:30 UTC). The script decides who is due.
     # GitHub cron can run late; the "send once per day" state file makes that safe.
@@ -37,6 +39,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PAGES_URL: ${{ vars.PAGES_URL }}
           FORCE: ${{ inputs.force }}
+          PREVIEW: ${{ github.event_name == 'push' }}
         run: python automation/main.py
       - name: Commit report and state
         run: |

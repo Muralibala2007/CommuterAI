@@ -12,6 +12,7 @@ _owner, _, _repo = os.environ.get("GITHUB_REPOSITORY", "owner/repo").partition("
 # Repo variable PAGES_URL wins; otherwise derive the standard GitHub Pages address.
 PAGES_URL = (os.environ.get("PAGES_URL") or f"https://{_owner.lower()}.github.io/{_repo}").rstrip("/")
 FORCE = os.environ.get("FORCE") == "true"
+PREVIEW = os.environ.get("PREVIEW") == "true"  # routes.json changed: build report only, no Telegram
 
 MODES = {  # key -> (Routes API travelMode, label)
     "transit": ("TRANSIT", "Bus / Train"),
@@ -112,11 +113,13 @@ def main():
     report_f = ROOT / f"docs/data/reports/{today}.json"
     report = json.loads(report_f.read_text()) if report_f.exists() else {"date": today, "routes": []}
     lines = []
+    ids = {r["id"] for r in cfg["routes"]}
+    report["routes"] = [r for r in report["routes"] if r["id"] in ids]  # drop removed routes
 
     for rc in cfg["routes"]:
         h, m = map(int, rc["depart_time"].split(":"))
         depart = now.replace(hour=h, minute=m, second=0, microsecond=0)
-        if not FORCE:
+        if not (FORCE or PREVIEW):
             if rc["id"] in sent or now.weekday() not in rc.get("days", range(7)):
                 continue
             if now < depart - dt.timedelta(minutes=45):  # send ~45 min before leaving
@@ -138,7 +141,8 @@ def main():
         lines.append(f"<b>{html.escape(rc['name'])}</b>\nFastest: {best['label']}, <b>{hm(best['minutes'])}</b>"
                      + (f" (+{best['delay_minutes']} min traffic)" if best["delay_minutes"] else "")
                      + (f"\nNext locals: {', '.join(trains)}" if trains else ""))
-        sent.append(rc["id"])
+        if not PREVIEW and rc["id"] not in sent:
+            sent.append(rc["id"])
 
     if not lines:
         print("Nothing to send.")
@@ -146,6 +150,9 @@ def main():
     report["generated_at"] = now.isoformat(timespec="minutes")
     report_f.write_text(json.dumps(report, indent=1))
     (ROOT / "docs/data/latest.json").write_text(json.dumps(report, indent=1))  # fallback for report.html
+    if PREVIEW:
+        print("Preview report written for", len(lines), "route(s); no Telegram message sent.")
+        return
     link = f"{PAGES_URL}/report.html?d={today}"
     telegram("Good morning. Your commute today:\n\n" + "\n\n".join(lines) + f"\n\nFull route details:\n{link}")
     state_f.write_text(json.dumps({k: v for k, v in sorted(state.items())[-14:]}, indent=1))
