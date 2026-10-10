@@ -13,16 +13,16 @@
      "label": "Bike",
      "minutes": 44,
      "no_traffic_minutes": 41,
-     "delay_minutes": 2,
+     "delay_minutes": 3,
      "km": 20.8,
      "steps": []
     },
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 50,
+     "minutes": 49,
      "no_traffic_minutes": 41,
-     "delay_minutes": 9,
+     "delay_minutes": 7,
      "km": 20.8,
      "steps": []
     },
@@ -148,9 +148,9 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 94,
+     "minutes": 92,
      "no_traffic_minutes": 93,
-     "delay_minutes": 2,
+     "delay_minutes": 0,
      "km": 46.8,
      "steps": []
     },
@@ -159,7 +159,7 @@
      "label": "Car",
      "minutes": 101,
      "no_traffic_minutes": 94,
-     "delay_minutes": 8,
+     "delay_minutes": 7,
      "km": 46.3,
      "steps": []
     },
@@ -302,18 +302,18 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 138,
+     "minutes": 135,
      "no_traffic_minutes": 134,
-     "delay_minutes": 4,
+     "delay_minutes": 1,
      "km": 58.2,
      "steps": []
     },
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 155,
+     "minutes": 152,
      "no_traffic_minutes": 134,
-     "delay_minutes": 20,
+     "delay_minutes": 18,
      "km": 58.0,
      "steps": []
     },
@@ -581,9 +581,9 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 53,
+     "minutes": 52,
      "no_traffic_minutes": 48,
-     "delay_minutes": 5,
+     "delay_minutes": 4,
      "km": 23.4,
      "steps": []
     },
@@ -686,5 +686,5 @@
    }
   }
  ],
- "generated_at": "2026-10-10T20:32+05:30"
+ "generated_at": "2026-10-10T20:44+05:30"
 }
