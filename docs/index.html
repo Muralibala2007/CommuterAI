@@ -1,12 +1,35 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Commute planner</title>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"></head><body><main>
-<header><div><h1>Commute planner</h1><p class="sub" id="msg">Loading routes...</p></div>
-<div><button class="primary" id="new">Add route</button> <button id="cfg">Settings</button> <button id="theme" aria-label="Toggle theme">Theme</button></div></header>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-logo" viewBox="0 0 24 24"><path d="M5 17a2 2 0 1 0 0 .01M19 7a2 2 0 1 0 0 .01"/><path d="M7 17h7a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5"/></symbol>
+<symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 18v2M16 18v2"/><circle cx="8" cy="14.5" r=".6"/><circle cx="16" cy="14.5" r=".6"/></symbol>
+<symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 21l2-4M15 21l-2-4"/><circle cx="9" cy="14" r=".6"/><circle cx="15" cy="14" r=".6"/></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5M3 16h18v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="13" r=".6"/><circle cx="16.5" cy="13" r=".6"/></symbol>
+<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="16.5" r="3.5"/><circle cx="18.5" cy="16.5" r="3.5"/><path d="M5.5 16.5 9 8h5l4.5 8.5M9 8 7.5 6H5M14 8l-3 8.5h-5.5"/></symbol>
+<symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.8"/><path d="m9 21 2.5-6-2-3 1-4 3-1 2 3 3 1M11.5 15l3.5 2 1 4M10 8 7 10"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.400 15a1.700 1.700 0 0 0 .3 1.800l.1.1a2 2 0 1 1-2.800 2.800l-.1-.1a1.700 1.700 0 0 0-1.800-.3 1.700 1.700 0 0 0-1 1.500V21a2 2 0 1 1-4 0v-.1a1.700 1.700 0 0 0-1.100-1.500 1.700 1.700 0 0 0-1.800.3l-.1.1a2 2 0 1 1-2.800-2.800l.1-.1a1.700 1.700 0 0 0 .3-1.800 1.700 1.700 0 0 0-1.500-1H3a2 2 0 1 1 0-4h.1a1.700 1.700 0 0 0 1.500-1.100 1.700 1.700 0 0 0-.3-1.800l-.1-.1a2 2 0 1 1 2.800-2.800l.1.1a1.700 1.700 0 0 0 1.800.3H9a1.700 1.700 0 0 0 1-1.500V3a2 2 0 1 1 4 0v.1a1.700 1.700 0 0 0 1 1.500 1.700 1.700 0 0 0 1.800-.3l.1-.1a2 2 0 1 1 2.800 2.800l-.1.1a1.700 1.700 0 0 0-.3 1.800V9a1.700 1.700 0 0 0 1.500 1H21a2 2 0 1 1 0 4h-.1a1.700 1.700 0 0 0-1.500 1z"/></symbol>
+<symbol id="i-theme" viewBox="0 0 24 24"><path d="M21 12.800A9 9 0 1 1 11.200 3a7 7 0 0 0 9.800 9.800z"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.800 2.800 0 0 0-4-4L4 16z"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-12M9 7V4h6v3"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM14 3v5h5M9 13h6M9 17h6"/></symbol>
+</defs></svg>
+<main>
+<header class="top"><div class="brand"><div class="logo"><svg class="ico"><use href="#i-logo"/></svg></div>
+<div><h1>Commute planner</h1><p class="sub msg" id="msg" aria-live="polite">Loading routes...</p></div></div>
+<div class="actions"><a class="btn" href="report.html" title="Today's report"><svg class="ico"><use href="#i-doc"/></svg><span class="btn-label">Report</span></a>
+<button id="cfg" title="Settings"><svg class="ico"><use href="#i-gear"/></svg><span class="btn-label">Settings</span></button>
+<button id="theme" aria-label="Toggle theme" title="Toggle theme"><svg class="ico"><use href="#i-theme"/></svg></button>
+<button class="primary" id="new"><svg class="ico"><use href="#i-plus"/></svg><span class="btn-label">Add route</span></button></div></header>
 
 <div class="layout">
- <div class="side" id="list" role="listbox" aria-label="Your routes"></div>
+ <div class="sidecol"><div class="side-head"><h2>Your routes</h2><span class="pill" id="count">0</span></div><div class="side" id="list" role="listbox" aria-label="Your routes"></div></div>
  <section class="card panel" id="panel"></section>
 </div>
 
@@ -15,24 +38,30 @@
 <label>From<input id="origin" placeholder="Thane Railway Station"></label>
 <label>To<input id="dest" placeholder="Bandra Kurla Complex"></label>
 <label>Leave at<div class="time"><select id="hh"></select><select id="mm"></select><select id="ap"><option>AM</option><option>PM</option></select></div></label>
-<div class="chips" id="days"></div><div class="chips" id="modes"></div>
+<label>Days</label><div class="chips" id="days"></div><label>Travel modes</label><div class="chips" id="modes"></div>
 <div class="grid"><label>Local train from (optional)<input id="tfrom" placeholder="Thane"></label>
 <label>Local train to (optional)<input id="tto" placeholder="Dadar"></label></div>
-<p class="msg" id="ferr"></p>
-<button class="primary" id="saveRoute">Save route</button> <button id="cancel">Cancel</button></form></dialog>
+<p class="msg bad" id="ferr"></p>
+<div class="dact"><button class="primary" id="saveRoute">Save route</button> <button id="cancel">Cancel</button></div></form></dialog>
 
 <dialog id="sdlg" class="card"><h2>Settings</h2>
 <label>GitHub repository (owner/name)<input id="repo" placeholder="you/commute-bot"></label>
 <label>Branch<input id="branch" value="main"></label>
 <label>Fine-grained token (Contents: read and write, this repo only)<input id="token" type="password"></label>
 <label>Google Maps Embed API key (optional, gives the official map)<input id="mapkey" type="password"></label>
-<p class="sub">Stored only in this browser. Routes are saved to GitHub automatically.</p>
-<button class="primary" id="sok">Save settings</button></dialog>
+<p class="sub" style="margin-bottom:12px">Stored only in this browser. Routes are saved to GitHub automatically.</p>
+<div class="dact"><button class="primary" id="sok">Save settings</button></div></dialog>
 </main>
 <script>
 const $=id=>document.getElementById(id),LS=localStorage,enc=encodeURIComponent;
 const DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],MODES={transit:"Bus / Train",drive:"Car",two_wheeler:"Bike"};
 const MAP={transit:{f:"r",m:"transit",l:"Bus / Train"},drive:{f:"d",m:"driving",l:"Car"},two_wheeler:{f:"b",m:"bicycling",l:"Bike"}};
+const IC={transit:"bus",drive:"car",two_wheeler:"bike"};
+const ic=n=>`<svg class="ico"><use href="#i-${n}"/></svg>`;
+const split=l=>{const m=/^(.*?)\s*\(option (\d+)\)$/i.exec(l);return m?{base:m[1],opt:m[2]}:{base:l,opt:null}};
+const nextDep=()=>{const n=new Date();let best=null;routes.forEach(r=>{const[h,m]=r.depart_time.split(":").map(Number);
+ for(let d=0;d<8;d++){const t=new Date(n);t.setDate(n.getDate()+d);t.setHours(h,m,0,0);const wd=(t.getDay()+6)%7;
+  if(t>n&&r.days.includes(wd)){if(!best||t<best.t)best={t,r};break}}});return best};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const hm=m=>m<60?`${m} min`:`${Math.floor(m/60)} h${m%60?` ${m%60} min`:""}`;
 const t12=t=>{const[h,m]=t.split(":").map(Number);return`${h%12||12}:${String(m).padStart(2,"0")} ${h<12?"AM":"PM"}`};
@@ -65,12 +94,15 @@ function persist(){LS.routes=JSON.stringify(routes);if(!ready()){say("Not saved 
 
 // render
 function draw(){
- $("list").innerHTML=routes.length?routes.map((r,i)=>{const lr=latest&&(latest.routes||[]).find(x=>x.id===r.id),b=lr&&lr.options[0];
+ $("count").textContent=routes.length;
+ $("list").innerHTML=routes.length?routes.map((r,i)=>{const lr=latest&&(latest.routes||[]).find(x=>x.id===r.id),b=lr&&lr.options[0],sp=b&&split(b.label);
+  const days=r.days.length===7?"Every day":r.days.length===5&&[0,1,2,3,4].every(d=>r.days.includes(d))?"Mon\u2013Fri":r.days.map(d=>DAYS[d]).join(", ");
   return`<div class="card route" role="option" tabindex="0" aria-selected="${i===sel}" data-i="${i}"><h3>${esc(r.name)}</h3>
-  <p class="sub">${esc(r.origin)} to ${esc(r.destination)}</p>
-  <p class="sub">${t12(r.depart_time)} on ${r.days.length===7?"every day":r.days.map(d=>DAYS[d]).join(", ")}</p>
-  ${b?`<p class="sub">Latest: ${esc(b.label)}, <strong>${hm(b.minutes)}</strong></p>`:""}
-  <div class="acts"><button data-edit="${i}">Edit</button><button data-del="${i}">Remove</button></div></div>`}).join(""):'<div class="card empty">No routes yet. Choose Add route to set up your first daily commute.</div>';
+  <div class="trip"><div class="rail"><span class="dot"></span><span class="bar"></span><span class="dot end"></span></div>
+   <span class="pt">${esc(r.origin)}</span><span class="pt">${esc(r.destination)}</span></div>
+  <div class="meta"><span class="pill accent">${ic("clock")}${t12(r.depart_time)}</span><span class="pill">${esc(days)}</span>
+  ${b?`<span class="pill ok">${ic(IC[b.mode]||"bus")}${esc(sp.base)} ${hm(b.minutes)}</span>`:""}</div>
+  <div class="acts"><button data-edit="${i}">${ic("edit")}Edit</button><button class="danger" data-del="${i}">${ic("trash")}Remove</button></div></div>`}).join(""):'<div class="card empty">No routes yet. Choose <b>Add route</b> to set up your first daily commute.</div>';
  panel()}
 function panel(){const r=routes[sel],p=$("panel");
  if(!r){p.innerHTML='<div class="empty">Select a route to see it on the map.</div>';return}
@@ -79,16 +111,25 @@ function panel(){const r=routes[sel],p=$("panel");
   :`https://maps.google.com/maps?saddr=${enc(r.origin)}&daddr=${enc(r.destination)}&dirflg=${M.f}&output=embed`;
  const open=`https://www.google.com/maps/dir/?api=1&origin=${enc(r.origin)}&destination=${enc(r.destination)}&travelmode=${M.m}`;
  const lr=latest&&(latest.routes||[]).find(x=>x.id===r.id);
- p.innerHTML=`<h2>${esc(r.name)}</h2><div class="tabs">${ms.map(m=>`<button data-mode="${m}" aria-pressed="${m===mode}">${MAP[m].l}</button>`).join("")}</div>
- <iframe class="map" title="Map of ${esc(r.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${src}"></iframe>
- <p class="sub"><a href="${open}" target="_blank" rel="noopener">Open in Google Maps</a> for live traffic</p>
- ${lr?`<h2 style="margin-top:14px">Latest report (${esc(latest.date)})</h2>${lr.options.map(o=>`<div class="opt"><span>${esc(o.label)}</span><strong>${hm(o.minutes)}</strong></div>`).join("")}`:""}`}
-$("list").onclick=e=>{const t=e.target,c=t.closest("[data-i]");
- if(t.dataset.del){const i=+t.dataset.del;if(confirm(`Remove "${routes[i].name}"?`)){routes.splice(i,1);sel=0;draw();persist()}return}
- if(t.dataset.edit){openForm(+t.dataset.edit);return}
+ const nd=nextDep();
+ p.innerHTML=`<div class="panel-head"><div style="min-width:0"><h2>${esc(r.name)}</h2>
+  <p class="sub">${esc(r.origin)} \u2192 ${esc(r.destination)}</p></div>
+  <div class="tabs" role="group" aria-label="Travel mode">${ms.map(m=>`<button data-mode="${m}" aria-pressed="${m===mode}">${ic(IC[m])}${MAP[m].l}</button>`).join("")}</div></div>
+ <div class="mapwrap"><iframe class="map" title="Map of ${esc(r.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${src}"></iframe>
+  <a class="btn maplink" href="${open}" target="_blank" rel="noopener">${ic("ext")}Open in Google Maps</a></div>
+ <div class="panel-body">${lr?`<h2><span>Latest report \u00b7 ${esc(latest.date)}</span><a href="report.html">Full details</a></h2>${lr.options.map((o,i)=>{const s=split(o.label),c=o.delay_minutes>=15?"bad":o.delay_minutes>=5?"warn":"ok";
+  return`<div class="opt ${i?"":"best"}"><span class="mi">${ic(IC[o.mode]||"bus")}</span>
+  <div><div class="l">${esc(s.base)}${s.opt?` <span class="pill">Option ${s.opt}</span>`:""}${i?"":' <span class="pill accent">Fastest</span>'}</div>
+  <div class="s">${o.km} km${o.mode!=="transit"?` \u00b7 <span class="${c}">${o.delay_minutes?`+${o.delay_minutes} min traffic`:"clear roads"}</span>`:""}</div></div>
+  <strong class="t">${hm(o.minutes)}</strong></div>`}).join("")}`
+  :`<p class="sub">No report yet for this route. The next scheduled run will add travel times here.</p>`}
+  ${nd?`<p class="sub" style="margin-top:10px">${ic("clock")} Next departure: <strong>${esc(nd.r.name)}</strong>, ${nd.t.toLocaleDateString([],{weekday:"short"})} ${t12(nd.r.depart_time)}</p>`:""}</div>`}
+$("list").onclick=e=>{const t=e.target,c=t.closest("[data-i]"),bd=t.closest("[data-del]"),be=t.closest("[data-edit]");
+ if(bd){const i=+bd.dataset.del;if(confirm(`Remove "${routes[i].name}"?`)){routes.splice(i,1);sel=0;draw();persist()}return}
+ if(be){openForm(+be.dataset.edit);return}
  if(c){sel=+c.dataset.i;draw()}};
 $("list").onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&e.target.dataset.i){e.preventDefault();sel=+e.target.dataset.i;draw()}};
-$("panel").onclick=e=>{if(e.target.dataset.mode){mode=e.target.dataset.mode;panel()}};
+$("panel").onclick=e=>{const b=e.target.closest("[data-mode]");if(b){mode=b.dataset.mode;panel()}};
 
 // add / edit
 function openForm(i){editing=i;const r=i==null?{name:"",origin:"",destination:"",depart_time:"08:30",days:[0,1,2,3,4],modes:Object.keys(MODES)}:routes[i];
