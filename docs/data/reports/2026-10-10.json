@@ -148,18 +148,18 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 92,
+     "minutes": 94,
      "no_traffic_minutes": 93,
-     "delay_minutes": 0,
+     "delay_minutes": 1,
      "km": 46.8,
      "steps": []
     },
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 106,
+     "minutes": 108,
      "no_traffic_minutes": 94,
-     "delay_minutes": 13,
+     "delay_minutes": 14,
      "km": 46.3,
      "steps": []
     },
@@ -293,10 +293,10 @@
    "trains": [],
    "train_pair": null,
    "weather": {
-    "temp_c": 34.6,
-    "rain_mm": 0.1
+    "temp_c": 34.5,
+    "rain_mm": 0.0
    }
   }
  ],
- "generated_at": "2026-10-10T14:44+05:30"
+ "generated_at": "2026-10-10T14:56+05:30"
 }
