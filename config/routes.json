@@ -41,6 +41,21 @@
         "drive",
         "two_wheeler"
       ]
+    },
+    {
+      "id": "panvelkar-estate-greenford-badlapurchhat-5693",
+      "name": "Home to Airport",
+      "origin": "Panvelkar estate Greenford, Badlapur",
+      "destination": "Chhatrapati Shivaji maharaj International Airport, Andheri",
+      "depart_time": "10:30",
+      "days": [
+        5
+      ],
+      "modes": [
+        "transit",
+        "drive",
+        "two_wheeler"
+      ]
     }
   ]
 }
