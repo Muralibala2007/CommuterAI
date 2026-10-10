@@ -179,29 +179,49 @@
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 60,
+     "minutes": 51,
      "no_traffic_minutes": 41,
-     "delay_minutes": 18,
+     "delay_minutes": 10,
      "km": 20.8,
      "steps": []
     },
     {
      "mode": "transit",
-     "label": "Bus / Train (option 1)",
-     "minutes": 80,
-     "no_traffic_minutes": 80,
+     "label": "Bus / Train (option 2)",
+     "minutes": 92,
+     "no_traffic_minutes": 92,
      "delay_minutes": 0,
-     "km": 21.4,
+     "km": 22.0,
      "steps": [
       {
        "type": "walk",
-       "text": "Walk 4 min",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
        "depart": ""
       },
       {
        "type": "bus",
-       "text": "Bus 126 from Gavdevi Mandir (Thane) to MMRDA Grounds (28 stops) toward Reserve Bank of India",
-       "depart": "2026-10-10T10:30:00Z"
+       "text": "Bus 8 from Thane (W) to Income Tax Office (4 stops) toward Vartak Nagar",
+       "depart": "2026-10-10T15:08:00Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Kanjur Marg Village (Eeh) (4 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-10T15:18:44Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-492 from Kanjur Marg Village (Eeh) to Gandhi Nagar (4 stops) toward Majas Depot",
+       "depart": "2026-10-10T15:33:42Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 303 from Gandhi Nagar (Kanjurmarg) to Citi Bank (BKC) (23 stops) toward Bandra (E) Bus Station",
+       "depart": "2026-10-10T15:46:12Z"
       },
       {
        "type": "walk",
@@ -212,26 +232,26 @@
     },
     {
      "mode": "transit",
-     "label": "Bus / Train (option 2)",
-     "minutes": 117,
-     "no_traffic_minutes": 117,
+     "label": "Bus / Train (option 1)",
+     "minutes": 108,
+     "no_traffic_minutes": 108,
      "delay_minutes": 0,
-     "km": 22.7,
+     "km": 21.7,
      "steps": [
       {
        "type": "bus",
        "text": "Bus 23 from Thane Railway Station to Forest Office (6 stops) toward Lokmanya Nagar",
-       "depart": "2026-10-10T09:50:05Z"
+       "depart": "2026-10-10T14:50:05Z"
       },
       {
        "type": "bus",
-       "text": "Bus A-494 from Forest Office to Ishwar Nagar or Bhandup (W) (17 stops) toward Ghatkopar Bus Station",
-       "depart": "2026-10-10T10:05:43Z"
+       "text": "Bus A-499 from Forest Office to Asian Paints (13 stops) toward Ghatkopar Bus Station",
+       "depart": "2026-10-10T15:00:32Z"
       },
       {
        "type": "bus",
-       "text": "Bus 303 from Ishwar Nagar or Bhandup (W) to Citi Bank (BKC) (30 stops) toward Bandra (E) Bus Station",
-       "depart": "2026-10-10T10:42:40Z"
+       "text": "Bus 303 from Asian Paints to Citi Bank (BKC) (34 stops) toward Bandra (E) Bus Station",
+       "depart": "2026-10-10T15:27:22Z"
       },
       {
        "type": "walk",
@@ -243,34 +263,34 @@
     {
      "mode": "transit",
      "label": "Bus / Train (option 3)",
-     "minutes": 119,
-     "no_traffic_minutes": 119,
+     "minutes": 109,
+     "no_traffic_minutes": 109,
      "delay_minutes": 0,
-     "km": 22.4,
+     "km": 22.6,
      "steps": [
       {
+       "type": "bus",
+       "text": "Bus 43 from Thane Railway Station to Forest Office (6 stops) toward Kisan Nagar",
+       "depart": "2026-10-10T14:56:16Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-494 from Forest Office to Dargah (Vikhroli-W) (31 stops) toward Ghatkopar Bus Station",
+       "depart": "2026-10-10T15:06:51Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-7 from Dargah (Vikhroli-W) to Anjanabai Magar Chowk or Swatantra Sainik Surve Chowk (15 stops) toward Vijay Vallabh Chowk (Pydhonie)",
+       "depart": "2026-10-10T16:05:41Z"
+      },
+      {
        "type": "walk",
-       "text": "Walk 2 min",
+       "text": "Walk 5 min",
        "depart": ""
       },
       {
-       "type": "bus",
-       "text": "Bus 23 from A.K. Joshi Vidyalaya to Johnson Company (6 stops) toward Lokmanya Nagar",
-       "depart": "2026-10-10T09:52:14Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 88 from Johnson Company to Vandana Hotel (7 stops) toward TMT Mulund station",
-       "depart": "2026-10-10T10:03:50Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 303 from Dhanvantari Hospital to Citi Bank (BKC) (46 stops) toward Bandra (E) Bus Station",
-       "depart": "2026-10-10T10:16:45Z"
-      },
-      {
        "type": "walk",
-       "text": "Walk 2 min",
+       "text": "Walk 4 min",
        "depart": ""
       }
      ]
@@ -283,10 +303,10 @@
     "to": "Dadar"
    },
    "weather": {
-    "temp_c": 36.5,
-    "rain_mm": 0.2
+    "temp_c": 31.5,
+    "rain_mm": 0.0
    }
   }
  ],
- "generated_at": "2026-10-10T15:05+05:30"
+ "generated_at": "2026-10-10T20:12+05:30"
 }
