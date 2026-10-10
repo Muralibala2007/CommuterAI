@@ -6,9 +6,41 @@
       "origin": "Thane Railway Station, Thane, Maharashtra",
       "destination": "Bandra Kurla Complex, Mumbai",
       "depart_time": "08:30",
-      "days": [0, 1, 2, 3, 4],
-      "modes": ["transit", "drive", "two_wheeler"],
-      "train": { "from": "Thane", "to": "Dadar" }
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        "transit",
+        "drive",
+        "two_wheeler"
+      ],
+      "train": {
+        "from": "Thane",
+        "to": "Dadar"
+      }
+    },
+    {
+      "id": "panvelkar-estate-greenford-badlapursies--3147",
+      "name": "Home To SIES Clg",
+      "origin": "Panvelkar estate Greenford, Badlapur",
+      "destination": "SIES Graduate School of Technology, nerul",
+      "depart_time": "07:00",
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "modes": [
+        "transit",
+        "drive",
+        "two_wheeler"
+      ]
     }
   ]
 }
