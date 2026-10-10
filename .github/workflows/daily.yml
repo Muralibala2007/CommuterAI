@@ -1,0 +1,46 @@
+name: Daily commute alert
+
+on:
+  schedule:
+    # Every 30 min, 05:30-12:00 IST (00:00-06:30 UTC). The script decides who is due.
+    # GitHub cron can run late; the "send once per day" state file makes that safe.
+    - cron: "*/30 0-6 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Send now, ignoring time and weekday rules"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: commute
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Build report and send Telegram message
+        env:
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAGES_URL: ${{ vars.PAGES_URL }}
+          FORCE: ${{ inputs.force }}
+        run: python automation/main.py
+      - name: Commit report and state
+        run: |
+          git config user.name "commute-bot"
+          git config user.email "commute-bot@users.noreply.github.com"
+          git add docs/data state
+          git diff --cached --quiet || { git commit -m "Daily commute report"; git pull --rebase; git push; }

@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "id": "home-office",
+      "name": "Home to office",
+      "origin": "Thane Railway Station, Thane, Maharashtra",
+      "destination": "Bandra Kurla Complex, Mumbai",
+      "depart_time": "08:30",
+      "days": [0, 1, 2, 3, 4],
+      "modes": ["transit", "drive", "two_wheeler"],
+      "train": { "from": "Thane", "to": "Dadar" }
+    }
+  ]
+}

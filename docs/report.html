@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Today's commute</title>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body><main>
+<header><div><h1>Today's commute</h1><p class="sub" id="meta">Loading...</p></div><div><a class="btn" href="index.html">Routes</a> <button id="theme">Theme</button></div></header>
+<div id="out"></div></main>
+<script>
+const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const tm=s=>new Date(s).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});
+const d=new URLSearchParams(location.search).get("d")||new Date().toISOString().slice(0,10);
+fetch(`data/reports/${encodeURIComponent(d)}.json`).then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{
+ $("meta").textContent=`${j.date}, updated ${tm(j.generated_at)}`;
+ $("out").innerHTML=j.routes.map(r=>{const w=r.weather;
+  return `<h2>${esc(r.name)}</h2><p class="sub">${esc(r.origin)} to ${esc(r.destination)}, leave ${esc(r.depart_time)}`+
+  (w?`. Weather at destination: ${w.temp_c} C${w.rain_mm>0?", rain "+w.rain_mm+" mm":""}`:"")+`</p>`+
+  r.options.map((o,i)=>{const cls=o.delay_minutes>=15?"bad":o.delay_minutes>=5?"warn":"ok";
+   return `<div class="card ${i?"":"best"}"><div class="row"><div><strong>${esc(o.label)}</strong> ${i?"":'<span class="tag">Fastest</span>'}
+   <p class="sub">${o.km} km`+(o.mode!=="transit"?`, <span class="${cls}">${o.delay_minutes?`+${o.delay_minutes} min traffic`:"clear roads"}</span> (${o.no_traffic_minutes} min without traffic)`:"")+`</p></div>
+   <div class="mins">${o.minutes}<small> min</small></div></div>`+
+   (o.steps.length?`<ul class="steps">${o.steps.map(s=>`<li>${esc(s.text)}${s.depart?" ("+tm(s.depart)+")":""}</li>`).join("")}</ul>`:"")+`</div>`}).join("")+
+  (r.trains.length?`<div class="card"><strong>Next local trains ${esc(r.train_pair.from)} to ${esc(r.train_pair.to)}</strong><p class="sub">${r.trains.join(", ")} (from the trainhelp.in timetable)</p></div>`:"")}).join("")
+}).catch(()=>{$("meta").textContent="";$("out").innerHTML='<div class="card">No report for this date yet. Reports appear after the morning alert is sent.</div>'});
+const root=document.documentElement;root.dataset.theme=localStorage.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+$("theme").onclick=()=>{localStorage.theme=root.dataset.theme=root.dataset.theme==="dark"?"light":"dark"};
+</script></body></html>

@@ -1,0 +1,27 @@
+:root{--bg:#eef2f6;--panel:#fff;--ink:#111c2b;--mute:#5b6b7e;--line:#d5dde6;--accent:#1456c8;--accent-ink:#fff;--ok:#12805c;--warn:#a86400;--bad:#c0322b}
+:root[data-theme=dark]{--bg:#0d1520;--panel:#152233;--ink:#e8eef6;--mute:#8da0b6;--line:#26374c;--accent:#5b9bff;--accent-ink:#06101e;--ok:#3fcf9b;--warn:#f0b24a;--bad:#ff7b72}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Schibsted Grotesk",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+h1{font-size:1.6rem;margin:0;letter-spacing:-.02em}h2{font-size:1.1rem;margin:0 0 12px}
+.sub{color:var(--mute);margin:2px 0 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px;color:var(--ink)}
+button,.btn{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 14px;border-radius:8px;cursor:pointer;text-decoration:none;display:inline-block}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button:focus-visible,input:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+input{font:inherit;width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+label{display:block;font-size:.9rem;color:var(--mute);margin-bottom:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chips label{display:flex;align-items:center;gap:6px;margin:0;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.chips input{width:auto}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mins{font-size:2rem;font-weight:700;letter-spacing:-.03em;line-height:1}
+.mins small{font-size:.9rem;font-weight:400;color:var(--mute)}
+.best{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.tag{font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--accent);color:var(--accent-ink)}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+ul.steps{margin:10px 0 0;padding-left:18px;color:var(--mute)}
+.msg{min-height:1.4em;color:var(--mute)}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
