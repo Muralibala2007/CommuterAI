@@ -2,56 +2,117 @@
 <title>Commute planner</title>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"></head><body><main>
-<header><div><h1>Commute planner</h1><p class="sub">Set your daily routes. A Telegram message with live traffic arrives before you leave.</p></div>
-<button id="theme" aria-label="Toggle theme">Theme</button></header>
+<header><div><h1>Commute planner</h1><p class="sub" id="msg">Loading routes...</p></div>
+<div><button class="primary" id="new">Add route</button> <button id="cfg">Settings</button> <button id="theme" aria-label="Toggle theme">Theme</button></div></header>
 
-<section class="card"><h2>Add a route</h2><form id="f" onsubmit="return false">
-<div class="grid"><label>Name<input id="name" placeholder="Home to office"></label>
-<label>Leave at<input id="time" type="time" value="08:30"></label>
+<div class="layout">
+ <div class="side" id="list" role="listbox" aria-label="Your routes"></div>
+ <section class="card panel" id="panel"></section>
+</div>
+
+<dialog id="dlg" class="card"><h2 id="dtitle">Add route</h2><form onsubmit="return false">
+<label>Name<input id="name" placeholder="Home to office"></label>
 <label>From<input id="origin" placeholder="Thane Railway Station"></label>
 <label>To<input id="dest" placeholder="Bandra Kurla Complex"></label>
-<label>Local train from (optional)<input id="tfrom" placeholder="Thane"></label>
-<label>Local train to (optional)<input id="tto" placeholder="Dadar"></label></div>
+<label>Leave at<div class="time"><select id="hh"></select><select id="mm"></select><select id="ap"><option>AM</option><option>PM</option></select></div></label>
 <div class="chips" id="days"></div><div class="chips" id="modes"></div>
-<button class="primary" id="add">Add route</button></form></section>
+<div class="grid"><label>Local train from (optional)<input id="tfrom" placeholder="Thane"></label>
+<label>Local train to (optional)<input id="tto" placeholder="Dadar"></label></div>
+<p class="msg" id="ferr"></p>
+<button class="primary" id="saveRoute">Save route</button> <button id="cancel">Cancel</button></form></dialog>
 
-<section><h2>Your routes</h2><div id="list"></div>
-<p class="msg" id="msg"></p>
-<button class="primary" id="save">Save to GitHub</button> <button id="export">Download JSON</button> <button id="cfg">GitHub settings</button></section>
-
-<dialog id="dlg" class="card"><h2>GitHub settings</h2>
-<label>Repository (owner/name)<input id="repo" placeholder="you/commute-bot"></label>
+<dialog id="sdlg" class="card"><h2>Settings</h2>
+<label>GitHub repository (owner/name)<input id="repo" placeholder="you/commute-bot"></label>
 <label>Branch<input id="branch" value="main"></label>
 <label>Fine-grained token (Contents: read and write, this repo only)<input id="token" type="password"></label>
-<p class="sub">Stored only in this browser.</p><button class="primary" id="ok">Done</button></dialog>
+<label>Google Maps Embed API key (optional, gives the official map)<input id="mapkey" type="password"></label>
+<p class="sub">Stored only in this browser. Routes are saved to GitHub automatically.</p>
+<button class="primary" id="sok">Save settings</button></dialog>
 </main>
 <script>
-const $=id=>document.getElementById(id),LS=localStorage;
+const $=id=>document.getElementById(id),LS=localStorage,enc=encodeURIComponent;
 const DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],MODES={transit:"Bus / Train",drive:"Car",two_wheeler:"Bike"};
-let routes=JSON.parse(LS.routes||"[]");
-$("days").innerHTML=DAYS.map((d,i)=>`<label><input type=checkbox data-d=${i} ${i<5?"checked":""}>${d}</label>`).join("");
-$("modes").innerHTML=Object.entries(MODES).map(([k,v])=>`<label><input type=checkbox data-m=${k} checked>${v}</label>`).join("");
-const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-function draw(){LS.routes=JSON.stringify(routes);
- $("list").innerHTML=routes.length?routes.map((r,i)=>`<div class="card row"><div><strong>${esc(r.name)}</strong><p class="sub">${esc(r.origin)} to ${esc(r.destination)}<br>${r.depart_time}, ${r.days.map(d=>DAYS[d]).join(" ")}</p></div><button data-del=${i}>Remove</button></div>`).join(""):'<p class="sub">No routes yet. Add one above.</p>'}
-$("list").onclick=e=>{if(e.target.dataset.del){routes.splice(+e.target.dataset.del,1);draw()}};
-function say(t){$("msg").textContent=t}
-$("add").onclick=()=>{const o=$("origin").value.trim(),d=$("dest").value.trim();
- if(!o||!d)return say("Enter both a start and a destination.");
- const r={id:(o+d).toLowerCase().replace(/\W+/g,"-").slice(0,40)+"-"+Date.now()%1e4,name:$("name").value.trim()||"My route",origin:o,destination:d,depart_time:$("time").value,
-  days:[...document.querySelectorAll("[data-d]:checked")].map(x=>+x.dataset.d),modes:[...document.querySelectorAll("[data-m]:checked")].map(x=>x.dataset.m)};
- if($("tfrom").value&&$("tto").value)r.train={from:$("tfrom").value.trim(),to:$("tto").value.trim()};
- routes.push(r);draw();say("Route added. Save to GitHub to activate it.")};
-$("export").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify({routes},null,2)],{type:"application/json"}));a.download="routes.json";a.click()};
-$("cfg").onclick=()=>{["repo","branch","token"].forEach(k=>$(k).value=LS["gh_"+k]||$(k).value);$("dlg").showModal()};
-$("ok").onclick=()=>{["repo","branch","token"].forEach(k=>LS["gh_"+k]=$(k).value.trim());$("dlg").close()};
-$("save").onclick=async()=>{const repo=LS.gh_repo,br=LS.gh_branch||"main",tok=LS.gh_token;
- if(!repo||!tok)return $("cfg").click();
- const url=`https://api.github.com/repos/${repo}/contents/config/routes.json`,H={Authorization:"Bearer "+tok,Accept:"application/vnd.github+json"};
- try{say("Saving...");const cur=await fetch(url+"?ref="+br,{headers:H});const sha=cur.ok?(await cur.json()).sha:undefined;
-  const put=await fetch(url,{method:"PUT",headers:H,body:JSON.stringify({message:"Update routes from dashboard",branch:br,sha,content:btoa(unescape(encodeURIComponent(JSON.stringify({routes},null,2))))})});
-  say(put.ok?"Saved. The next scheduled run will use these routes.":"GitHub rejected the save ("+put.status+"). Check the repo name and token permissions.")}catch(e){say("Could not reach GitHub.")}};
+const MAP={transit:{f:"r",m:"transit",l:"Bus / Train"},drive:{f:"d",m:"driving",l:"Car"},two_wheeler:{f:"b",m:"bicycling",l:"Bike"}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hm=m=>m<60?`${m} min`:`${Math.floor(m/60)} h${m%60?` ${m%60} min`:""}`;
+const t12=t=>{const[h,m]=t.split(":").map(Number);return`${h%12||12}:${String(m).padStart(2,"0")} ${h<12?"AM":"PM"}`};
+let routes=JSON.parse(LS.routes||"[]"),sel=0,mode=null,editing=null,latest=null;
+const say=t=>$("msg").textContent=t;
+
+// form widgets
+$("hh").innerHTML=[...Array(12)].map((_,i)=>`<option>${i+1}</option>`).join("");
+$("mm").innerHTML=[0,5,10,15,20,25,30,35,40,45,50,55].map(m=>`<option>${String(m).padStart(2,"0")}</option>`).join("");
+$("days").innerHTML=DAYS.map((d,i)=>`<label><input type=checkbox data-d=${i}>${d}</label>`).join("");
+$("modes").innerHTML=Object.entries(MODES).map(([k,v])=>`<label><input type=checkbox data-m=${k}>${v}</label>`).join("");
+
+// GitHub sync (single user: every change is saved straight away)
+const gh=()=>({repo:LS.gh_repo,br:LS.gh_branch||"main",tok:LS.gh_token});
+const api=()=>{const g=gh();return{url:`https://api.github.com/repos/${g.repo}/contents/config/routes.json`,H:{Authorization:"Bearer "+g.tok,Accept:"application/vnd.github+json"},br:g.br}};
+const ready=()=>gh().repo&&gh().tok;
+async function pull(){
+ if(!ready()){say("Add your GitHub details in Settings to save routes.");return}
+ try{const a=api(),r=await fetch(a.url+"?ref="+a.br+"&t="+Date.now(),{headers:a.H});
+  if(r.ok){const j=await r.json();routes=JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,"")))) ).routes||[];LS.routes=JSON.stringify(routes);say("Synced with GitHub.")}
+  else say(r.status===404?"No routes file yet. Add a route to create it.":"Could not read GitHub ("+r.status+"). Check Settings.")
+ }catch(e){say("Offline. Showing the last saved routes.")}
+ sel=Math.min(sel,Math.max(routes.length-1,0));draw()}
+let chain=Promise.resolve();
+function persist(){LS.routes=JSON.stringify(routes);if(!ready()){say("Not saved to GitHub: open Settings first.");return}
+ chain=chain.then(async()=>{try{say("Saving to GitHub...");const a=api();
+  const cur=await fetch(a.url+"?ref="+a.br+"&t="+Date.now(),{headers:a.H});const sha=cur.ok?(await cur.json()).sha:undefined;
+  const put=await fetch(a.url,{method:"PUT",headers:a.H,body:JSON.stringify({message:"Update routes from dashboard",branch:a.br,sha,content:btoa(unescape(encodeURIComponent(JSON.stringify({routes},null,2))))})});
+  say(put.ok?"Saved to GitHub. The next scheduled run will use it.":"GitHub rejected the save ("+put.status+"). Check the repo, branch and token.")}catch(e){say("Could not reach GitHub. Try again.")}})}
+
+// render
+function draw(){
+ $("list").innerHTML=routes.length?routes.map((r,i)=>{const lr=latest&&(latest.routes||[]).find(x=>x.id===r.id),b=lr&&lr.options[0];
+  return`<div class="card route" role="option" tabindex="0" aria-selected="${i===sel}" data-i="${i}"><h3>${esc(r.name)}</h3>
+  <p class="sub">${esc(r.origin)} to ${esc(r.destination)}</p>
+  <p class="sub">${t12(r.depart_time)} on ${r.days.length===7?"every day":r.days.map(d=>DAYS[d]).join(", ")}</p>
+  ${b?`<p class="sub">Latest: ${esc(b.label)}, <strong>${hm(b.minutes)}</strong></p>`:""}
+  <div class="acts"><button data-edit="${i}">Edit</button><button data-del="${i}">Remove</button></div></div>`}).join(""):'<div class="card empty">No routes yet. Choose Add route to set up your first daily commute.</div>';
+ panel()}
+function panel(){const r=routes[sel],p=$("panel");
+ if(!r){p.innerHTML='<div class="empty">Select a route to see it on the map.</div>';return}
+ const ms=(r.modes&&r.modes.length?r.modes:Object.keys(MODES));if(!ms.includes(mode))mode=ms[0];const M=MAP[mode],k=LS.gh_mapkey;
+ const src=k?`https://www.google.com/maps/embed/v1/directions?key=${enc(k)}&origin=${enc(r.origin)}&destination=${enc(r.destination)}&mode=${M.m}`
+  :`https://maps.google.com/maps?saddr=${enc(r.origin)}&daddr=${enc(r.destination)}&dirflg=${M.f}&output=embed`;
+ const open=`https://www.google.com/maps/dir/?api=1&origin=${enc(r.origin)}&destination=${enc(r.destination)}&travelmode=${M.m}`;
+ const lr=latest&&(latest.routes||[]).find(x=>x.id===r.id);
+ p.innerHTML=`<h2>${esc(r.name)}</h2><div class="tabs">${ms.map(m=>`<button data-mode="${m}" aria-pressed="${m===mode}">${MAP[m].l}</button>`).join("")}</div>
+ <iframe class="map" title="Map of ${esc(r.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${src}"></iframe>
+ <p class="sub"><a href="${open}" target="_blank" rel="noopener">Open in Google Maps</a> for live traffic</p>
+ ${lr?`<h2 style="margin-top:14px">Latest report (${esc(latest.date)})</h2>${lr.options.map(o=>`<div class="opt"><span>${esc(o.label)}</span><strong>${hm(o.minutes)}</strong></div>`).join("")}`:""}`}
+$("list").onclick=e=>{const t=e.target,c=t.closest("[data-i]");
+ if(t.dataset.del){const i=+t.dataset.del;if(confirm(`Remove "${routes[i].name}"?`)){routes.splice(i,1);sel=0;draw();persist()}return}
+ if(t.dataset.edit){openForm(+t.dataset.edit);return}
+ if(c){sel=+c.dataset.i;draw()}};
+$("list").onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&e.target.dataset.i){e.preventDefault();sel=+e.target.dataset.i;draw()}};
+$("panel").onclick=e=>{if(e.target.dataset.mode){mode=e.target.dataset.mode;panel()}};
+
+// add / edit
+function openForm(i){editing=i;const r=i==null?{name:"",origin:"",destination:"",depart_time:"08:30",days:[0,1,2,3,4],modes:Object.keys(MODES)}:routes[i];
+ $("dtitle").textContent=i==null?"Add route":"Edit route";$("ferr").textContent="";
+ $("name").value=r.name;$("origin").value=r.origin;$("dest").value=r.destination;
+ const[h,m]=r.depart_time.split(":").map(Number);$("hh").value=h%12||12;$("mm").value=String(Math.round(m/5)*5%60).padStart(2,"0");$("ap").value=h<12?"AM":"PM";
+ document.querySelectorAll("[data-d]").forEach(x=>x.checked=r.days.includes(+x.dataset.d));
+ document.querySelectorAll("[data-m]").forEach(x=>x.checked=(r.modes||Object.keys(MODES)).includes(x.dataset.m));
+ $("tfrom").value=r.train?r.train.from:"";$("tto").value=r.train?r.train.to:"";$("dlg").showModal()}
+$("new").onclick=()=>openForm(null);$("cancel").onclick=()=>$("dlg").close();
+$("saveRoute").onclick=()=>{const o=$("origin").value.trim(),d=$("dest").value.trim(),days=[...document.querySelectorAll("[data-d]:checked")].map(x=>+x.dataset.d),modes=[...document.querySelectorAll("[data-m]:checked")].map(x=>x.dataset.m);
+ if(!o||!d)return $("ferr").textContent="Enter both a start and a destination.";
+ if(!days.length||!modes.length)return $("ferr").textContent="Pick at least one day and one travel mode.";
+ let h=+$("hh").value%12+($("ap").value==="PM"?12:0);
+ const r={id:editing!=null?routes[editing].id:(o+d).toLowerCase().replace(/\W+/g,"-").slice(0,40)+"-"+Date.now()%1e4,name:$("name").value.trim()||"My route",origin:o,destination:d,depart_time:`${String(h).padStart(2,"0")}:${$("mm").value}`,days,modes};
+ if($("tfrom").value.trim()&&$("tto").value.trim())r.train={from:$("tfrom").value.trim(),to:$("tto").value.trim()};
+ if(editing!=null)routes[editing]=r;else{routes.push(r);sel=routes.length-1}
+ $("dlg").close();draw();persist()};
+
+// settings + theme
+$("cfg").onclick=()=>{["repo","branch","token","mapkey"].forEach(k=>$(k).value=LS["gh_"+k]||$(k).value);$("sdlg").showModal()};
+$("sok").onclick=()=>{["repo","branch","token","mapkey"].forEach(k=>LS["gh_"+k]=$(k).value.trim());$("sdlg").close();pull()};
 const root=document.documentElement;root.dataset.theme=LS.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
 $("theme").onclick=()=>{LS.theme=root.dataset.theme=root.dataset.theme==="dark"?"light":"dark"};
-draw();
+fetch("data/latest.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{latest=j;draw()}).catch(()=>{});
+draw();pull();if(!ready())$("cfg").click();
 </script></body></html>

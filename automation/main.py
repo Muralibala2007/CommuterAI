@@ -25,6 +25,10 @@ VEHICLES = {"BUS": "Bus", "HEAVY_RAIL": "Train", "COMMUTER_TRAIN": "Train", "TRA
             "RAIL": "Train", "SUBWAY": "Metro", "METRO_RAIL": "Metro", "MONORAIL": "Monorail"}
 
 
+def hm(m):
+    return f"{m} min" if m < 60 else f"{m // 60} h" + (f" {m % 60} min" if m % 60 else "")
+
+
 def secs(v):
     return int(str(v).rstrip("s") or 0)
 
@@ -131,7 +135,7 @@ def main():
             "depart_time": rc["depart_time"], "options": options, "fastest": options[0]["label"],
             "trains": trains, "train_pair": rc.get("train"), "weather": weather(end) if end else None}]
         best = options[0]
-        lines.append(f"<b>{html.escape(rc['name'])}</b>\nFastest: {best['label']}, <b>{best['minutes']} min</b>"
+        lines.append(f"<b>{html.escape(rc['name'])}</b>\nFastest: {best['label']}, <b>{hm(best['minutes'])}</b>"
                      + (f" (+{best['delay_minutes']} min traffic)" if best["delay_minutes"] else "")
                      + (f"\nNext locals: {', '.join(trains)}" if trains else ""))
         sent.append(rc["id"])
