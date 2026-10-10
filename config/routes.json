@@ -56,6 +56,22 @@
         "drive",
         "two_wheeler"
       ]
+    },
+    {
+      "id": "anand-nagar-ghodbunder-road-thaner-city--8598",
+      "name": "Home to Mall",
+      "origin": "Anand nagar, ghodbunder road, thane",
+      "destination": "R- city mall, ghatkopar",
+      "depart_time": "20:50",
+      "days": [
+        5,
+        6
+      ],
+      "modes": [
+        "transit",
+        "drive",
+        "two_wheeler"
+      ]
     }
   ]
 }
