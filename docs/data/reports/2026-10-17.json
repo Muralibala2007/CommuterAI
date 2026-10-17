@@ -1,0 +1,245 @@
+{
+ "date": "2026-10-17",
+ "routes": [
+  {
+   "id": "panvelkar-estate-greenford-badlapurchhat-5693",
+   "name": "Home to Airport",
+   "origin": "Panvelkar estate Greenford, Badlapur",
+   "destination": "Chhatrapati Shivaji maharaj International Airport, Andheri",
+   "depart_time": "10:30",
+   "options": [
+    {
+     "mode": "two_wheeler",
+     "label": "Bike",
+     "minutes": 125,
+     "no_traffic_minutes": 122,
+     "delay_minutes": 3,
+     "km": 54.0,
+     "steps": []
+    },
+    {
+     "mode": "drive",
+     "label": "Car",
+     "minutes": 145,
+     "no_traffic_minutes": 123,
+     "delay_minutes": 22,
+     "km": 53.6,
+     "steps": []
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 1)",
+     "minutes": 230,
+     "no_traffic_minutes": 230,
+     "delay_minutes": 0,
+     "km": 62.5,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 6 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 046 AC from Badlapur Fire Brigade Center to Mahape Junction (43 stops) toward Vashi Railway Station-3",
+       "depart": "2026-10-17T13:30:00Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 8 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-525 from Millennium Business Park to Shipping Corporation (31 stops) toward Majas Depot",
+       "depart": "2026-10-17T15:35:11Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 382 LTD from Shipping Corporation to Chhatrapati Shivaji International Airport (Sahar) (15 stops) toward Sahar Cargo Complex",
+       "depart": "2026-10-17T16:43:26Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 14 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 12 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 8 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 14 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 2)",
+     "minutes": 231,
+     "no_traffic_minutes": 231,
+     "delay_minutes": 0,
+     "km": 64.9,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 6 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 046 AC from Badlapur Fire Brigade Center to Vashi Bus Station (63 stops) toward Vashi Railway Station-3",
+       "depart": "2026-10-17T13:30:00Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-504 from Apna Bazar (Vashi) to Telecom Factory (8 stops) toward Shivaji Nagar Depot",
+       "depart": "2026-10-17T15:55:41Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-505 from Telecom Factory to Income Tax Office (BKC) (13 stops) toward Santacruz Depot",
+       "depart": "2026-10-17T16:22:28Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "metro",
+       "text": "Metro Line 3 from Bandra-Kurla Complex to CSMI Airport-T1 (3 stops) toward Aarey JVLR",
+       "depart": "2026-10-17T17:00:22Z"
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 3)",
+     "minutes": 237,
+     "no_traffic_minutes": 237,
+     "delay_minutes": 0,
+     "km": 61.6,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 6 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 046 AC from Badlapur Fire Brigade Center to Mahape Junction (43 stops) toward Vashi Railway Station-3",
+       "depart": "2026-10-17T13:30:00Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 8 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 522 LTD from Millennium Business Park to Seepz (40 stops) toward Majas Depot",
+       "depart": "2026-10-17T15:31:50Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "metro",
+       "text": "Metro Line 3 from \u09b8\u09c0\u09aa\u09cd\u099c to CSMI Airport-T1 (5 stops) toward Cuffe Parade",
+       "depart": "2026-10-17T17:02:24Z"
+      }
+     ]
+    }
+   ],
+   "fastest": "Bike",
+   "trains": [],
+   "train_pair": null,
+   "weather": {
+    "temp_c": 35.1,
+    "rain_mm": 0.1
+   }
+  }
+ ],
+ "generated_at": "2026-10-17T13:56+05:30"
+}
