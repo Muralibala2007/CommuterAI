@@ -1,0 +1,307 @@
+{
+ "date": "2026-10-23",
+ "routes": [
+  {
+   "id": "home-office",
+   "name": "Home to office",
+   "origin": "Thane Railway Station, Thane, Maharashtra",
+   "destination": "Bandra Kurla Complex, Mumbai",
+   "depart_time": "08:30",
+   "options": [
+    {
+     "mode": "two_wheeler",
+     "label": "Bike",
+     "minutes": 53,
+     "no_traffic_minutes": 43,
+     "delay_minutes": 11,
+     "km": 20.8,
+     "steps": []
+    },
+    {
+     "mode": "drive",
+     "label": "Car",
+     "minutes": 66,
+     "no_traffic_minutes": 42,
+     "delay_minutes": 24,
+     "km": 23.5,
+     "steps": []
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 3)",
+     "minutes": 98,
+     "no_traffic_minutes": 98,
+     "delay_minutes": 0,
+     "km": 23.9,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 53AC from Thane (W) to Income Tax Office (4 stops) toward Nagla Bundar",
+       "depart": "2026-10-23T04:25:00Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Kanjur Marg Village (Eeh) (4 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-23T04:36:36Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 368 LTD from Kanjur Marg Village (Eeh) to Chheda Nagar (14 stops) toward Prabodhankar Thackeray Udyan Bus Station (Sewree)",
+       "depart": "2026-10-23T04:53:25Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-371 from Chheda Nagar to Citi Bank (BKC) (8 stops) toward Bandra Railway Terminus",
+       "depart": "2026-10-23T05:28:50Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 1)",
+     "minutes": 100,
+     "no_traffic_minutes": 100,
+     "delay_minutes": 0,
+     "km": 24.7,
+     "steps": [
+      {
+       "type": "bus",
+       "text": "Bus 240AC from Thane Railway Station to Teen Hath Naka (7 stops) toward Lokmanya Nagar",
+       "depart": "2026-10-23T04:21:19Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Kanjur Marg Village (Eeh) (4 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-23T04:36:36Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 368 LTD from Kanjur Marg Village (Eeh) to Chheda Nagar (14 stops) toward Prabodhankar Thackeray Udyan Bus Station (Sewree)",
+       "depart": "2026-10-23T04:53:25Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-371 from Chheda Nagar to Citi Bank (BKC) (8 stops) toward Bandra Railway Terminus",
+       "depart": "2026-10-23T05:28:50Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 2)",
+     "minutes": 100,
+     "no_traffic_minutes": 100,
+     "delay_minutes": 0,
+     "km": 26.2,
+     "steps": [
+      {
+       "type": "bus",
+       "text": "Bus 240AC from Thane Railway Station to Teen Hath Naka (7 stops) toward Lokmanya Nagar",
+       "depart": "2026-10-23T04:21:19Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Kanjur Marg Village (Eeh) (4 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-23T04:36:36Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Kanjur Marg Village (Eeh) to Amar Mahal (7 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-10-23T04:53:25Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
+       "depart": "2026-10-23T05:31:11Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    }
+   ],
+   "fastest": "Bike",
+   "trains": [],
+   "train_pair": {
+    "from": "Thane",
+    "to": "Dadar"
+   },
+   "weather": {
+    "temp_c": 32.6,
+    "rain_mm": 0.0
+   }
+  },
+  {
+   "id": "panvelkar-estate-greenford-badlapursies--3147",
+   "name": "Home To SIES Clg",
+   "origin": "Panvelkar estate Greenford, Badlapur",
+   "destination": "SIES Graduate School of Technology, nerul",
+   "depart_time": "07:00",
+   "options": [
+    {
+     "mode": "two_wheeler",
+     "label": "Bike",
+     "minutes": 93,
+     "no_traffic_minutes": 97,
+     "delay_minutes": 0,
+     "km": 46.8,
+     "steps": []
+    },
+    {
+     "mode": "drive",
+     "label": "Car",
+     "minutes": 110,
+     "no_traffic_minutes": 89,
+     "delay_minutes": 21,
+     "km": 39.7,
+     "steps": []
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 1)",
+     "minutes": 163,
+     "no_traffic_minutes": 163,
+     "delay_minutes": 0,
+     "km": 40.6,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 7 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 4 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 046 AC from Veer Savarkar Chowk to Turbhe Naka (52 stops) toward Vashi Railway Station-3",
+       "depart": "2026-10-23T04:31:41Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 055 AC from Turbhe Naka to Nerul L.P. (4 stops) toward Pethali",
+       "depart": "2026-10-23T06:40:05Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 6 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 2)",
+     "minutes": 166,
+     "no_traffic_minutes": 166,
+     "delay_minutes": 0,
+     "km": 40.6,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 7 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 4 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 046 AC from Veer Savarkar Chowk to Lipi Computer (41 stops) toward Vashi Railway Station-3",
+       "depart": "2026-10-23T04:31:41Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 044 from Lipi Computer to Nerul L.P. (15 stops) toward Belapur Railway Station",
+       "depart": "2026-10-23T06:21:22Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 6 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 3)",
+     "minutes": 177,
+     "no_traffic_minutes": 177,
+     "delay_minutes": 0,
+     "km": 46.7,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 7 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 4 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 046 AC from Veer Savarkar Chowk to Bank of Baroda (60 stops) toward Vashi Railway Station-3",
+       "depart": "2026-10-23T04:31:41Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 020 AC from Vashi Bus Station to Chhatrapati Shivaji Maharaj Chowk (11 stops) toward Nerul Sector 46& 48",
+       "depart": "2026-10-23T06:52:02Z"
+      }
+     ]
+    }
+   ],
+   "fastest": "Bike",
+   "trains": [],
+   "train_pair": null,
+   "weather": {
+    "temp_c": 31.7,
+    "rain_mm": 0.0
+   }
+  }
+ ],
+ "generated_at": "2026-10-23T09:43+05:30"
+}
