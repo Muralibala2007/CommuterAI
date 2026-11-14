@@ -1,220 +1,38 @@
 {
- "date": "2026-11-13",
+ "date": "2026-11-14",
  "routes": [
   {
-   "id": "home-office",
-   "name": "Home to office",
-   "origin": "Thane Railway Station, Thane, Maharashtra",
-   "destination": "Bandra Kurla Complex, Mumbai",
-   "depart_time": "08:30",
-   "options": [
-    {
-     "mode": "two_wheeler",
-     "label": "Bike",
-     "minutes": 38,
-     "no_traffic_minutes": 43,
-     "delay_minutes": 0,
-     "km": 20.8,
-     "steps": []
-    },
-    {
-     "mode": "drive",
-     "label": "Car",
-     "minutes": 43,
-     "no_traffic_minutes": 42,
-     "delay_minutes": 1,
-     "km": 23.5,
-     "steps": []
-    },
-    {
-     "mode": "transit",
-     "label": "Bus / Train (option 3)",
-     "minutes": 94,
-     "no_traffic_minutes": 94,
-     "delay_minutes": 0,
-     "km": 30.0,
-     "steps": [
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      },
-      {
-       "type": "walk",
-       "text": "Walk 3 min",
-       "depart": ""
-      },
-      {
-       "type": "bus",
-       "text": "Bus 60AC from Thane (W) to Income Tax Office (4 stops) toward Borivali",
-       "depart": "2026-11-13T06:10:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Rani Laxmibai Chowk (Sion) (16 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-11-13T06:22:43Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-312 from Rani Laxmibai Chowk (Sion) to B.K.C. Telephone Exchange (10 stops) toward Seepz Bus Station",
-       "depart": "2026-11-13T07:15:58Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 5 min",
-       "depart": ""
-      }
-     ]
-    },
-    {
-     "mode": "transit",
-     "label": "Bus / Train (option 1)",
-     "minutes": 96,
-     "no_traffic_minutes": 96,
-     "delay_minutes": 0,
-     "km": 31.2,
-     "steps": [
-      {
-       "type": "bus",
-       "text": "Bus A-700 from Thane Station (E) to Marathon Chowk (Teen Hath Naka) (5 stops) toward Magathane Depot",
-       "depart": "2026-11-13T06:05:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Rani Laxmibai Chowk (Sion) (16 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-11-13T06:22:43Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-312 from Rani Laxmibai Chowk (Sion) to B.K.C. Telephone Exchange (10 stops) toward Seepz Bus Station",
-       "depart": "2026-11-13T07:15:58Z"
-      },
-      {
-       "type": "walk",
-       "text": "Walk 5 min",
-       "depart": ""
-      }
-     ]
-    },
-    {
-     "mode": "transit",
-     "label": "Bus / Train (option 2)",
-     "minutes": 101,
-     "no_traffic_minutes": 101,
-     "delay_minutes": 0,
-     "km": 32.6,
-     "steps": [
-      {
-       "type": "bus",
-       "text": "Bus A-700 from Thane Station (E) to Marathon Chowk (Teen Hath Naka) (5 stops) toward Magathane Depot",
-       "depart": "2026-11-13T06:05:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Rani Laxmibai Chowk (Sion) (17 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-11-13T06:22:43Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 181 from Rani Laxmibai Chowk (Sion) to Citi Bank (BKC) (13 stops) toward Seepz Bus Station",
-       "depart": "2026-11-13T07:16:30Z"
-      }
-     ]
-    }
-   ],
-   "fastest": "Bike",
-   "trains": [],
-   "train_pair": {
-    "from": "Thane",
-    "to": "Dadar"
-   },
-   "weather": {
-    "temp_c": 33.8,
-    "rain_mm": 0.0
-   }
-  },
-  {
-   "id": "panvelkar-estate-greenford-badlapursies--3147",
-   "name": "Home To SIES Clg",
+   "id": "panvelkar-estate-greenford-badlapurchhat-5693",
+   "name": "Home to Airport",
    "origin": "Panvelkar estate Greenford, Badlapur",
-   "destination": "SIES Graduate School of Technology, nerul",
-   "depart_time": "07:00",
+   "destination": "Chhatrapati Shivaji maharaj International Airport, Andheri",
+   "depart_time": "10:30",
    "options": [
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 81,
-     "no_traffic_minutes": 89,
+     "minutes": 118,
+     "no_traffic_minutes": 128,
      "delay_minutes": 0,
-     "km": 40.2,
+     "km": 54.0,
      "steps": []
     },
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 93,
-     "no_traffic_minutes": 90,
-     "delay_minutes": 3,
-     "km": 39.7,
+     "minutes": 141,
+     "no_traffic_minutes": 129,
+     "delay_minutes": 12,
+     "km": 53.6,
      "steps": []
     },
     {
      "mode": "transit",
-     "label": "Bus / Train (option 3)",
-     "minutes": 158,
-     "no_traffic_minutes": 158,
-     "delay_minutes": 0,
-     "km": 40.8,
-     "steps": [
-      {
-       "type": "walk",
-       "text": "Walk 3 min",
-       "depart": ""
-      },
-      {
-       "type": "walk",
-       "text": "Walk 2 min",
-       "depart": ""
-      },
-      {
-       "type": "walk",
-       "text": "Walk 6 min",
-       "depart": ""
-      },
-      {
-       "type": "walk",
-       "text": "Walk 3 min",
-       "depart": ""
-      },
-      {
-       "type": "bus",
-       "text": "Bus 046 AC from Badlapur Fire Brigade Center to Turbhe Naka (53 stops) toward Vashi Railway Station-3",
-       "depart": "2026-11-13T14:30:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 020 AC from Turbhe Naka to Chhatrapati Shivaji Maharaj Chowk (5 stops) toward Nerul Sector 46& 48",
-       "depart": "2026-11-13T16:40:23Z"
-      }
-     ]
-    },
-    {
-     "mode": "transit",
      "label": "Bus / Train (option 1)",
-     "minutes": 163,
-     "no_traffic_minutes": 163,
+     "minutes": 230,
+     "no_traffic_minutes": 230,
      "delay_minutes": 0,
-     "km": 40.8,
+     "km": 62.5,
      "steps": [
       {
        "type": "walk",
@@ -238,23 +56,73 @@
       },
       {
        "type": "bus",
-       "text": "Bus 046 AC from Badlapur Fire Brigade Center to Turbhe Naka (53 stops) toward Vashi Railway Station-3",
-       "depart": "2026-11-13T13:30:00Z"
+       "text": "Bus 046 AC from Badlapur Fire Brigade Center to Mahape Junction (43 stops) toward Vashi Railway Station-3",
+       "depart": "2026-11-14T13:30:00Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 8 min",
+       "depart": ""
       },
       {
        "type": "bus",
-       "text": "Bus 020 AC from Turbhe Naka to Chhatrapati Shivaji Maharaj Chowk (5 stops) toward Nerul Sector 46& 48",
-       "depart": "2026-11-13T15:45:23Z"
+       "text": "Bus A-525 from Millennium Business Park to Ramashram (Powai) (30 stops) toward Majas Depot",
+       "depart": "2026-11-14T15:35:11Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 382 LTD from Ramashram (Powai) to Chhatrapati Shivaji International Airport (Sahar) (16 stops) toward Sahar Cargo Complex",
+       "depart": "2026-11-14T16:42:09Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 14 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 12 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 8 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 14 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
       }
      ]
     },
     {
      "mode": "transit",
      "label": "Bus / Train (option 2)",
-     "minutes": 164,
-     "no_traffic_minutes": 164,
+     "minutes": 237,
+     "no_traffic_minutes": 237,
      "delay_minutes": 0,
-     "km": 41.0,
+     "km": 61.6,
      "steps": [
       {
        "type": "walk",
@@ -278,18 +146,73 @@
       },
       {
        "type": "bus",
-       "text": "Bus 046 AC from Badlapur Fire Brigade Center to Turbhe Naka (53 stops) toward Vashi Railway Station-3",
-       "depart": "2026-11-13T14:00:00Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus 125AC from Turbhe Naka to Nerul L.P. (4 stops) toward Kendriya Industrial Suraksha Bal (C.I.S.F)",
-       "depart": "2026-11-13T16:10:11Z"
+       "text": "Bus 046 AC from Badlapur Fire Brigade Center to Mahape Junction (43 stops) toward Vashi Railway Station-3",
+       "depart": "2026-11-14T13:30:00Z"
       },
       {
        "type": "walk",
-       "text": "Walk 6 min",
+       "text": "Walk 8 min",
        "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 522 LTD from Millennium Business Park to Seepz (40 stops) toward Majas Depot",
+       "depart": "2026-11-14T15:31:50Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "metro",
+       "text": "Metro Line 3 from \u09b8\u09c0\u09aa\u09cd\u099c to CSMI Airport-T1 (5 stops) toward Cuffe Parade",
+       "depart": "2026-11-14T17:02:24Z"
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 3)",
+     "minutes": 250,
+     "no_traffic_minutes": 250,
+     "delay_minutes": 0,
+     "km": 63.2,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 7 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 4 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus 046 AC from Veer Savarkar Chowk to A.P.M.C Market (57 stops) toward Vashi Railway Station-3",
+       "depart": "2026-11-14T13:31:41Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-507 from A.P.M.C Market to Vakola Police Station (36 stops) toward Santacruz Station (E)",
+       "depart": "2026-11-14T15:53:08Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "metro",
+       "text": "Metro Line 3 from Santacruz to CSMI Airport-T1 (1 stops) toward Aarey JVLR",
+       "depart": "2026-11-14T17:23:52Z"
       }
      ]
     }
@@ -297,11 +220,8 @@
    "fastest": "Bike",
    "trains": [],
    "train_pair": null,
-   "weather": {
-    "temp_c": 33.0,
-    "rain_mm": 0.0
-   }
+   "weather": null
   }
  ],
- "generated_at": "2026-11-13T11:29+05:30"
+ "generated_at": "2026-11-14T11:19+05:30"
 }
