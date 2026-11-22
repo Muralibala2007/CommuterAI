@@ -1,0 +1,115 @@
+{
+ "date": "2026-11-22",
+ "routes": [
+  {
+   "id": "anand-nagar-ghodbunder-road-thaner-city--8598",
+   "name": "Home to Mall",
+   "origin": "Anand nagar, ghodbunder road, thane",
+   "destination": "R- city mall, ghatkopar",
+   "depart_time": "20:50",
+   "options": [
+    {
+     "mode": "two_wheeler",
+     "label": "Bike",
+     "minutes": 46,
+     "no_traffic_minutes": 50,
+     "delay_minutes": 0,
+     "km": 23.5,
+     "steps": []
+    },
+    {
+     "mode": "drive",
+     "label": "Car",
+     "minutes": 51,
+     "no_traffic_minutes": 50,
+     "delay_minutes": 1,
+     "km": 23.2,
+     "steps": []
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 3)",
+     "minutes": 74,
+     "no_traffic_minutes": 74,
+     "delay_minutes": 0,
+     "km": 23.7,
+     "steps": [
+      {
+       "type": "bus",
+       "text": "Bus A-700 from Anand Nagar (Ghodbunder Road) to Siddhivinayak Tower (14 stops) toward Thane Station (E)",
+       "depart": "2026-11-22T15:28:44Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Siddhivinayak Tower to Kanjur Marg Village (Eeh) (9 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-11-22T15:55:20Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-492 from Kanjur Marg Village (Eeh) to Gandhi Nagar (4 stops) toward Majas Depot",
+       "depart": "2026-11-22T16:12:29Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 489 LTD from Gandhi Nagar (Kanjurmarg) to Meenatai Thackeray Maidan (Anacin Company) (8 stops) toward Shivaji Nagar Bus Station",
+       "depart": "2026-11-22T16:22:39Z"
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 2)",
+     "minutes": 78,
+     "no_traffic_minutes": 78,
+     "delay_minutes": 0,
+     "km": 21.9,
+     "steps": [
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus C-61 from Muchhala College to Maharana Pratap Chowk (Mulund Check Naka-W) (14 stops) toward Mulund Depot",
+       "depart": "2026-11-22T15:39:16Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-499 from Maharana Pratap Chowk (Mulund Check Naka-W) to Meenatai Thackeray Maidan (Anacin Company) (27 stops) toward Ghatkopar Bus Station",
+       "depart": "2026-11-22T16:12:08Z"
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 1)",
+     "minutes": 86,
+     "no_traffic_minutes": 86,
+     "delay_minutes": 0,
+     "km": 23.0,
+     "steps": [
+      {
+       "type": "bus",
+       "text": "Bus 53AC from Anand Nagar to Forest Office (24 stops) toward Thane (W)",
+       "depart": "2026-11-22T15:30:23Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-499 from Forest Office to Meenatai Thackeray Maidan (Anacin Company) (30 stops) toward Ghatkopar Bus Station",
+       "depart": "2026-11-22T16:07:59Z"
+      }
+     ]
+    }
+   ],
+   "fastest": "Bike",
+   "trains": [],
+   "train_pair": null,
+   "weather": {
+    "temp_c": 27.2,
+    "rain_mm": 0.0
+   }
+  }
+ ],
+ "generated_at": "2026-11-22T20:18+05:30"
+}
