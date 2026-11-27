@@ -1,5 +1,5 @@
 {
- "date": "2026-11-12",
+ "date": "2026-11-27",
  "routes": [
   {
    "id": "home-office",
@@ -11,43 +11,88 @@
     {
      "mode": "two_wheeler",
      "label": "Bike",
-     "minutes": 41,
-     "no_traffic_minutes": 44,
-     "delay_minutes": 0,
-     "km": 20.6,
+     "minutes": 44,
+     "no_traffic_minutes": 43,
+     "delay_minutes": 1,
+     "km": 20.8,
      "steps": []
     },
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 45,
-     "no_traffic_minutes": 42,
-     "delay_minutes": 3,
+     "minutes": 47,
+     "no_traffic_minutes": 43,
+     "delay_minutes": 4,
      "km": 23.5,
      "steps": []
     },
     {
      "mode": "transit",
      "label": "Bus / Train (option 1)",
-     "minutes": 106,
-     "no_traffic_minutes": 106,
+     "minutes": 103,
+     "no_traffic_minutes": 103,
      "delay_minutes": 0,
-     "km": 25.3,
+     "km": 25.5,
      "steps": [
       {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "walk",
+       "text": "Walk 3 min",
+       "depart": ""
+      },
+      {
        "type": "bus",
-       "text": "Bus 212AC from Thane Railway Station to Income Tax Office (5 stops) toward Kisan Nagar",
-       "depart": "2026-11-12T06:50:22Z"
+       "text": "Bus 60AC from Thane (W) to Income Tax Office (4 stops) toward Borivali",
+       "depart": "2026-11-27T08:10:00Z"
       },
       {
        "type": "bus",
        "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Amar Mahal (11 stops) toward Rani Laxmibai Chowk (Sion)",
-       "depart": "2026-11-12T07:01:36Z"
+       "depart": "2026-11-27T08:21:36Z"
       },
       {
        "type": "bus",
        "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
-       "depart": "2026-11-12T08:06:11Z"
+       "depart": "2026-11-27T09:21:11Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      }
+     ]
+    },
+    {
+     "mode": "transit",
+     "label": "Bus / Train (option 2)",
+     "minutes": 110,
+     "no_traffic_minutes": 110,
+     "delay_minutes": 0,
+     "km": 26.1,
+     "steps": [
+      {
+       "type": "bus",
+       "text": "Bus 240 from Thane Railway Station to Forest Office (6 stops) toward Lokmanya Nagar",
+       "depart": "2026-11-27T08:01:16Z"
+      },
+      {
+       "type": "walk",
+       "text": "Walk 2 min",
+       "depart": ""
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-491 from Marathon Chowk (Teen Hath Naka) to Amar Mahal (11 stops) toward Rani Laxmibai Chowk (Sion)",
+       "depart": "2026-11-27T08:21:36Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus A-371 from Amar Mahal to Citi Bank (BKC) (7 stops) toward Bandra Railway Terminus",
+       "depart": "2026-11-27T09:21:11Z"
       },
       {
        "type": "walk",
@@ -59,60 +104,35 @@
     {
      "mode": "transit",
      "label": "Bus / Train (option 3)",
-     "minutes": 116,
-     "no_traffic_minutes": 116,
+     "minutes": 110,
+     "no_traffic_minutes": 110,
      "delay_minutes": 0,
-     "km": 22.6,
+     "km": 21.2,
      "steps": [
       {
-       "type": "bus",
-       "text": "Bus 23 from Thane Railway Station to Forest Office (6 stops) toward Lokmanya Nagar",
-       "depart": "2026-11-12T06:50:05Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus A-494 from Forest Office to Dargah (Vikhroli-W) (31 stops) toward Ghatkopar Bus Station",
-       "depart": "2026-11-12T07:04:36Z"
-      },
-      {
-       "type": "bus",
-       "text": "Bus C-302 from Dargah (Vikhroli-W) to Anjanabai Magar Chowk or Swatantra Sainik Surve Chowk (15 stops) toward Dharavi Depot",
-       "depart": "2026-11-12T08:01:03Z"
-      },
-      {
        "type": "walk",
-       "text": "Walk 5 min",
+       "text": "Walk 2 min",
        "depart": ""
       },
       {
        "type": "walk",
-       "text": "Walk 4 min",
+       "text": "Walk 3 min",
        "depart": ""
-      }
-     ]
-    },
-    {
-     "mode": "transit",
-     "label": "Bus / Train (option 2)",
-     "minutes": 122,
-     "no_traffic_minutes": 122,
-     "delay_minutes": 0,
-     "km": 22.2,
-     "steps": [
-      {
-       "type": "bus",
-       "text": "Bus 212AC from Thane Railway Station to Teen Hath Naka (6 stops) toward Kisan Nagar",
-       "depart": "2026-11-12T06:50:22Z"
       },
       {
        "type": "bus",
-       "text": "Bus A-494 from Marathon Chowk (Teen Hath Naka) to Huma Cinema (Kanjurmarg-W) (20 stops) toward Ghatkopar Bus Station",
-       "depart": "2026-11-12T07:06:49Z"
+       "text": "Bus 91 from Thane (W) to Teen Hath Naka (5 stops) toward Kisan Nagar",
+       "depart": "2026-11-27T08:19:59Z"
       },
       {
        "type": "bus",
-       "text": "Bus 303 from Huma Cinema (Kanjurmarg-W) to Citi Bank (BKC) (24 stops) toward Bandra (E) Bus Station",
-       "depart": "2026-11-12T07:55:53Z"
+       "text": "Bus 496 LTD from Marathon Chowk (Teen Hath Naka) to Asian Paints (12 stops) toward Agarkar Chowk (Andheri-E)",
+       "depart": "2026-11-27T08:29:00Z"
+      },
+      {
+       "type": "bus",
+       "text": "Bus 303 from Asian Paints to Citi Bank (BKC) (34 stops) toward Bandra (E) Bus Station",
+       "depart": "2026-11-27T08:53:59Z"
       },
       {
        "type": "walk",
@@ -129,7 +149,7 @@
     "to": "Dadar"
    },
    "weather": {
-    "temp_c": 34.6,
+    "temp_c": 32.3,
     "rain_mm": 0.0
    }
   },
@@ -152,7 +172,7 @@
     {
      "mode": "drive",
      "label": "Car",
-     "minutes": 90,
+     "minutes": 91,
      "no_traffic_minutes": 90,
      "delay_minutes": 1,
      "km": 39.7,
@@ -189,12 +209,12 @@
       {
        "type": "bus",
        "text": "Bus 046 AC from Badlapur Fire Brigade Center to Turbhe Naka (53 stops) toward Vashi Railway Station-3",
-       "depart": "2026-11-12T13:30:00Z"
+       "depart": "2026-11-27T13:30:00Z"
       },
       {
        "type": "bus",
        "text": "Bus 020 AC from Turbhe Naka to Chhatrapati Shivaji Maharaj Chowk (5 stops) toward Nerul Sector 46& 48",
-       "depart": "2026-11-12T15:45:23Z"
+       "depart": "2026-11-27T15:45:23Z"
       }
      ]
     },
@@ -229,12 +249,12 @@
       {
        "type": "bus",
        "text": "Bus 046 AC from Badlapur Fire Brigade Center to Turbhe Naka (53 stops) toward Vashi Railway Station-3",
-       "depart": "2026-11-12T13:30:00Z"
+       "depart": "2026-11-27T14:00:00Z"
       },
       {
        "type": "bus",
        "text": "Bus 125AC from Turbhe Naka to Nerul L.P. (4 stops) toward Kendriya Industrial Suraksha Bal (C.I.S.F)",
-       "depart": "2026-11-12T15:40:11Z"
+       "depart": "2026-11-27T16:10:11Z"
       },
       {
        "type": "walk",
@@ -246,8 +266,8 @@
     {
      "mode": "transit",
      "label": "Bus / Train (option 3)",
-     "minutes": 165,
-     "no_traffic_minutes": 165,
+     "minutes": 172,
+     "no_traffic_minutes": 172,
      "delay_minutes": 0,
      "km": 40.6,
      "steps": [
@@ -269,12 +289,12 @@
       {
        "type": "bus",
        "text": "Bus 046 AC from Veer Savarkar Chowk to CIDCO Water Supply (38 stops) toward Vashi Railway Station-3",
-       "depart": "2026-11-12T13:31:41Z"
+       "depart": "2026-11-27T14:01:41Z"
       },
       {
        "type": "bus",
        "text": "Bus 061 AC from CIDCO Water Supply to Nerul L.P. (24 stops) toward Belapur Railway Station",
-       "depart": "2026-11-12T15:10:40Z"
+       "depart": "2026-11-27T15:47:40Z"
       },
       {
        "type": "walk",
@@ -288,10 +308,10 @@
    "trains": [],
    "train_pair": null,
    "weather": {
-    "temp_c": 34.4,
+    "temp_c": 34.6,
     "rain_mm": 0.0
    }
   }
  ],
- "generated_at": "2026-11-12T12:13+05:30"
+ "generated_at": "2026-11-27T13:15+05:30"
 }
